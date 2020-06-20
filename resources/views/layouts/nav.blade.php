@@ -66,12 +66,6 @@ span .fa{
           <li class="nav-item">
             <a class="nav-link p-2" href="#">Science</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">Health</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">Style</a>
-          </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
