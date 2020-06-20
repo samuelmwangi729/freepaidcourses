@@ -19,9 +19,43 @@ Route::get('/', function () {
 Route::get('/cat', function () {
     return view('Single');
 });
-Route::get('/admin','IndexController@index');
-Route::get('/Login/check','Auth\LoginController@index')->name('login');
+Route::get('/rDAveiHCeuWm098JJNYPjB','IndexController@index');
+Auth::routes();
+// Route::post('/Login/check','Auth\LoginController@index')->name('login');
 
 // Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/Menus',[
+    'uses'=>'MenusController@index',
+    'as'=>'menus'
+]);
+Route::post('/Menus/Add',[
+    'uses'=>'MenusController@store',
+    'as'=>'menu.add'
+]);
+Route::get('/Menus/Add/{id}',[
+    'uses'=>'MenusController@destroy',
+    'as'=>'menu.delete'
+]);
+
+Route::get('/Course/Add',[
+    'uses'=>'CoursesController@create',
+    'as'=>'course.add'
+]);
+Route::post('/Course/Store',[
+    'uses'=>'CoursesController@store',
+    'as'=>'course.store'
+]);
+Route::get('/Course/All',[
+    'uses'=>'CoursesController@index',
+    'as'=>'courses'
+]);
+Route::get('/Course/View/{id}',[
+    'uses'=>'CoursesController@show',
+    'as'=>'course.view'
+]);
+Route::get('/Course/Delete/{id}',[
+    'uses'=>'CoursesController@destroy',
+    'as'=>'course.delete'
+]);
