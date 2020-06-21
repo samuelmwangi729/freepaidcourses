@@ -36,7 +36,7 @@ Route::get('/Menus/Add/{id}',[
     'uses'=>'MenusController@destroy',
     'as'=>'menu.delete'
 ]);
-Route::get('/Course/{slug}',[
+Route::get('/Course/View/{slug}',[
     'uses'=>'CoursesController@specific',
     'as'=>'Course'
 ]);

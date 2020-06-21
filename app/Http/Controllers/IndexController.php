@@ -11,7 +11,7 @@ class IndexController extends Controller
     }
     public function home(){
         $menus=Menu::all();
-        $courses=Course::orderBy('id','desc');
+        $courses=Course::orderBy('id','desc')->get();
         $top=Course::orderBy('id','asc')->get()->take(4);
         $active=Course::orderBy('id','desc')->get()->take(1);
         return view('welcome')
