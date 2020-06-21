@@ -42,30 +42,11 @@ span .fa{
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto" id="nav">
+          @foreach($menus as $menu)
           <li class="nav-item">
-            <a class="nav-link p-2" href="#">Development</a>
+            <a class="nav-link p-2" href="{{ route('View',[$menu->Name]) }}">{{ $menu->Name }}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">Business</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">Finance</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">Productivity</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">Design </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">Marketing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">LifeStyle</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="#">Science</a>
-          </li>
+          @endforeach
         </ul>
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

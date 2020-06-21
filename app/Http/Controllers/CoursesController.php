@@ -91,15 +91,26 @@ class CoursesController extends Controller
         return view('Courses.Single')->with('course',$course);
     }
 
+    public function single($menu){
+        $courses=Course::where('Category','=',$menu)->get();
+        return view('Courses.Categories')->with('menus',Menu::all())
+        ->with('courses',$courses);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function specific($slug)
     {
-        //
+        $course=Course::where('slug','=',$slug)->get()->first();
+        $courses=Course::orderBy('id','desc')->get();
+        return view('Courses.Specific')
+        ->with('menus',Menu::all())
+        ->with('course',$course)
+        ->with('courses',$courses);
     }
 
     /**

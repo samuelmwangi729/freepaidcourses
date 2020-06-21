@@ -1,7 +1,5 @@
 @include('layouts.nav')
   </div>
-
-
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -197,113 +195,7 @@
   
     <!-- /END THE FEATURETTES -->
     <!-- START THE FEATURETTES -->
-    <hr class="featurette-divider">
-    <h2 class="text-center" style="font-weight:bold">Featured Uploads</h2>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="card mb-3" style="max-width: 18rem;box-shadow: 5px 5px #e7e7e7;">
-         <a href="#">
-          <div class="card-header bg-transparent">
-            <img src="https://img-a.udemycdn.com/course/240x135/567828_67d0.jpg">
-          </div>
-          <div class="card-body">
-            <h6 class="card-title" style="font-weight:bold;font-size:13px">Complete Python BootCamp</h6>
-            <p class="card-text">
-              <address style="font-size:12px">
-              <i>Samuel Mwangi</i>
-              </address>
-              <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
-              </span> <b>4.5</b><i style="font-size:10px">(145,000 students)</i>
-            </p>
-          </div>
-        </div>
-         </a>
-      </div>  
-      <!--end col-->  
-      <div class="col-sm-3">
-        <div class="card  mb-3" style="max-width: 18rem;box-shadow: 5px 5px #e7e7e7;">
-         <a href="#">
-          <div class="card-header bg-transparent">
-            <img src="https://img-a.udemycdn.com/course/240x135/625204_436a_2.jpg">
-          </div>
-          <div class="card-body">
-            <h6 class="card-title" style="font-weight:bold;font-size:13px">Web Developer BootCamp</h6>
-            <p class="card-text">
-              <address style="font-size:12px">
-              <i>the Pirate</i>
-              </address>
-              <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
-              </span> <b>4.7</b><i style="font-size:10px">(14,000 students)</i>
-            </p>
-          </div>
-        </div>
-         </a>
-      </div>  
-      <!--end col-->  
-      <div class="col-sm-3">
-        <div class="card mb-3" style="max-width: 18rem;box-shadow: 5px 5px #e7e7e7;">
-         <a href="#">
-          <div class="card-header bg-transparent">
-            <img src="https://img-a.udemycdn.com/course/240x135/950390_270f_3.jpg">
-          </div>
-          <div class="card-body">
-            <h6 class="card-title" style="font-weight:bold;font-size:13px">Machine Learning BootCamp</h6>
-            <p class="card-text">
-              <address style="font-size:12px">
-              <i>Samuel Mwangi</i>
-              </address>
-              <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
-              </span> <b>4.5</b><i style="font-size:10px">(145,000 students)</i>
-            </p>
-          </div>
-        </div>
-         </a>
-      </div>  
-      <!--end col-->  
-      <div class="col-sm-3">
-        <div class="card mb-3" style="max-width: 18rem;box-shadow: 5px 5px #e7e7e7;">
-         <a href="#">
-          <div class="card-header bg-transparent">
-            <img src="https://img-a.udemycdn.com/course/240x135/756150_c033_2.jpg">
-          </div>
-          <div class="card-body">
-            <h6 class="card-title" style="font-weight:bold;font-size:13px">Complete Angular BootCamp</h6>
-            <p class="card-text">
-              <address style="font-size:12px">
-              <i>Samuel Mwangi</i>
-              </address>
-              <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
-              </span> <b>4.5</b><i style="font-size:10px">(145,000 students)</i>
-            </p>
-          </div>
-        </div>
-         </a>
-      </div>  
-      <!--end col-->  
-        
-    </div>
-    <!--end row-->
-  
+    <hr class="featurette-divider">  
     <hr class="featurette-divider">
   
     <!-- /END THE FEATURETTES -->

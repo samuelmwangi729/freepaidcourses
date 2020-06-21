@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','IndexController@home');
 Route::get('/cat', function () {
     return view('Single');
 });
@@ -37,6 +35,15 @@ Route::post('/Menus/Add',[
 Route::get('/Menus/Add/{id}',[
     'uses'=>'MenusController@destroy',
     'as'=>'menu.delete'
+]);
+Route::get('/Course/{slug}',[
+    'uses'=>'CoursesController@specific',
+    'as'=>'Course'
+]);
+
+Route::get('/Courses/View/{menu}',[
+    'uses'=>'CoursesController@single',
+    'as'=>'View'
 ]);
 
 Route::get('/Course/Add',[
