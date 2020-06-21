@@ -13,7 +13,7 @@ class IndexController extends Controller
         $menus=Menu::all();
         $courses=Course::orderBy('id','desc')->get();
         $top=Course::orderBy('id','asc')->get()->take(4);
-        $active=Course::orderBy('id','desc')->get()->take(1);
+        $active=Course::orderBy('id','desc')->get()->first();
         return view('welcome')
         ->with('menus',$menus)
         ->with('top',$top)

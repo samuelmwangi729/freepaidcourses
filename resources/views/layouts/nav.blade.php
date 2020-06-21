@@ -15,6 +15,16 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5eef022608ecd500128efbc0&product=sticky-share-buttons"></script>
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5eef022608ecd500128efbc0&cms=website' async='async'></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150395780-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150395780-2');
+</script>
+
 <style>
 #nav li a:hover{
   background-color: red;

@@ -1,4 +1,5 @@
 @include('layouts.nav')
+<div class="sharethis-inline-follow-buttons"></div>
   </div>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -8,34 +9,32 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height="500px" width="100%">
+        <img src="https://images.pexels.com/photos/247851/pexels-photo-247851.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" height="500px" width="100%">
         <div class="container">
           <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            <h1>Be Free of Worries</h1>
+            <p style="background-color:black;opacity:.5">With our daily updates and free courses coupons from all e-learning platforms, you now have nothing to worry about</p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height="500px" width="100%">
+        <img src="https://images.pexels.com/photos/17663/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="500px" width="100%">
   
         <div class="container">
           <div class="carousel-caption">
-            <h1 style="background-color:black;opacity:.8;color:white;font-weight:bold">Another example headline.</h1>
-            <p style="background-color:white;opacity:.6;color:black;font-weight:bold">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            <h1 style="background-color:black;opacity:.8;color:white;font-weight:bold">Easy Access</h1>
+            <p style="background-color:white;opacity:.6;color:black;font-weight:bold">We have optimized the site and designed it to be mobile  friendly fo fast and easy access</p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height="500px" width="100%">
+        <img src="https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_960_720.jpg" height="500px" width="100%">
   
         <div class="container">
           <div class="carousel-caption text-right">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            <h1>Cashless Learning.</h1>
+            <p>We make it funny. Just be In touch with us,Subscribe to our Telegram Channel for timely Updates</p>
+            <p><a class="btn btn-lg btn-primary" href="https://t.me/fcoursesudemy" target="_blank" role="button">Subscribe</a></p>
           </div>
         </div>
       </div>
@@ -70,7 +69,7 @@
         <div style="background-color:red;">
           <i class="fa fa-history" style="font-size:140px;color:white;text-shadow: 2px 2px blue"></i>
         </div>
-        <h2>Instant Access</h2>
+        <h2>Upto Date</h2>
         <p>You need the latest skills to do your job effectively.We give you access to skills that you need to excel</p> 
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4 text-center">
