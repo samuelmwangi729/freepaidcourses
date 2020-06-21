@@ -24,7 +24,7 @@
 
   gtag('config', 'UA-150395780-2');
 </script>
-
+<script data-ad-client="ca-pub-6177716716878978" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <style>
 #nav li a:hover{
   background-color: red;
