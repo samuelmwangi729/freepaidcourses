@@ -48,6 +48,7 @@
             <a href="{{ $course->CourseLink  }}" class="btn btn-danger" target="_blank">Enroll Now</a>
            </h5>
         </div>
+        <div class="sharethis-inline-reaction-buttons"></div>
         <div class="col-sm-3">
             <h2 class="text-center" style="font-weight:bold;font-size:12px">Courses</h2>
             <hr class="featurette-divider">
