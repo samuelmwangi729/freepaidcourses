@@ -40,7 +40,8 @@
                     <td>{{ $course->Category }}</td>
                     <td><a href="{{ $course->CourseLink }}" target="_blank"><button class="btn btn-primary btn-sm">Click Here</button></a></td>
                     <td>
-                        <a href="{{ route('course.view',[$course->id]) }}" class="fa fa-eye" style="color:green"></a>&nbsp;
+                        <a href="{{ route('course.edit',[$course->id]) }}" class="fa fa-edit" style="color:blue"></a>&nbsp;
+                        <a href="{{ route('course.view',[$course->slug]) }}" class="fa fa-eye" style="color:green"></a>&nbsp;
                         <a href="{{ route('course.delete',[$course->id]) }}" class="fa fa-trash" style="color:red"></a>&nbsp;
                     </td>
                   </tr>

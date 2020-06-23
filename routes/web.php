@@ -66,3 +66,11 @@ Route::get('/Course/Delete/{id}',[
     'uses'=>'CoursesController@destroy',
     'as'=>'course.delete'
 ]);
+Route::get('/Course/Edit/{id}',[
+    'uses'=>'CoursesController@edit',
+    'as'=>'course.edit'
+]);
+Route::post('/Course/Update/{id}',[
+    'uses'=>'CoursesController@update',
+    'as'=>'course.update'
+]);

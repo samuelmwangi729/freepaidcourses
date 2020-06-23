@@ -9,6 +9,11 @@ use Session;
 use App\Menu;
 class CoursesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -50,9 +55,6 @@ class CoursesController extends Controller
             'CourseBanner'=>'required'
         ]);
         $bannerImage=$request->CourseBanner;
-        // $newName=time().$bannerImage->getClientOriginalName();
-        // //upload the image to the server and a specific directory
-        // $bannerImage->move('uploads/courses',$newName);
         //Assign the variables
         $title=$request->CourseTitle;
         $slug=str_slug($title);
@@ -91,6 +93,15 @@ class CoursesController extends Controller
         return view('Courses.Single')->with('course',$course);
     }
 
+    public function edit($id)
+    {
+        $course=Course::find($id);
+        $menus=Menu::all();
+        return view('Courses.Edit')
+        ->with('menus',$menus)
+        ->with('course',$course);
+    }
+
     public function single($menu){
         $courses=Course::where('Category','=',$menu)->get();
         return view('Courses.Categories')->with('menus',Menu::all())
@@ -122,7 +133,31 @@ class CoursesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $bannerImage=$request->CourseBanner;
+        //Assign the variables
+        $title=$request->CourseTitle;
+        $slug=str_slug($title);
+        $instructor=$request->Instructor;
+        $category=$request->Category;
+        $rating=$request->Rating;
+        $students=$request->Students;
+        $link=$request->CourseLink;
+        $req=$request->Prerequisites;
+        $desc=$request->Description;
+        $course=Course::find($id)->first();
+        $course->CourseTitle=$title;
+        $course->slug=$slug;
+        $course->Instructor=$instructor;
+        $course->Category=$category;
+        $course->Rating=$rating;
+        $course->Students=$students;
+        $course->CourseLink=$link;
+        $course->Prerequisites=$req;
+        $course->Description=$desc;
+        $course->CourseBanner=$bannerImage;
+        $course->save();
+        Session::flash('success','the course has been successfully Updated');
+        return redirect()->back();
     }
 
     /**

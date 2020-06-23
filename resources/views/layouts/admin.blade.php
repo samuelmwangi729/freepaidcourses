@@ -186,7 +186,7 @@
               </li>
               <li class="nav-item">
                 <a href="{{ route('courses') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-eye nav-icon"></i>
                   <p>Courses</p>
                 </a>
               </li>
