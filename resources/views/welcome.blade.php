@@ -9,7 +9,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://images.pexels.com/photos/247851/pexels-photo-247851.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" height="500px" width="100%">
+        <img src="https://images.pexels.com/photos/247851/pexels-photo-247851.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" height="350px" width="100%">
         <div class="container">
           <div class="carousel-caption text-left">
             <h1>Be Free of Worries</h1>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://images.pexels.com/photos/17663/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="500px" width="100%">
+        <img src="https://images.pexels.com/photos/17663/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="350px" width="100%">
   
         <div class="container">
           <div class="carousel-caption">
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_960_720.jpg" height="500px" width="100%">
+        <img src="https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_960_720.jpg" height="350px" width="100%">
   
         <div class="container">
           <div class="carousel-caption text-right">
