@@ -11,7 +11,7 @@
             <div class="row">
                 @foreach($courses as $course)
                 <div class="col-sm-3">
-                    <div class="card mb-3" style="max-width: 18rem;box-shadow: 5px 5px #e7e7e7;">
+                    <div class="card mb-3" style="max-width: 100%;box-shadow: 5px 5px #e7e7e7;">
                      <a href="{{ route('Course',[$course->slug]) }}">
                       <div class="card-header bg-transparent">
                         <img src="{{ $course->CourseBanner }}" width="100%">
