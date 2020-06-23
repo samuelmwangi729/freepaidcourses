@@ -11,7 +11,8 @@
             <h2 class="text-center" style="font-weight:bold">{{ $course->CourseTitle }}</h2>
            <h2 class="text-center"> <img src="{{ $course->CourseBanner }}" width="50%"></h2>
            <h6 class="text-center">
-            Category: {{ $course->Category }} &nbsp; Rating <span>
+            Category: {{ $course->Category }} &nbsp; <br>
+            Rating <span>
                 @if($course->Rating==1)
                 <i class="fa fa-star" style="color:#f1c059"></i>
                 @endif
@@ -37,7 +38,7 @@
                 <i class="fa fa-star" style="color:#f1c059"></i>
                 <i class="fa fa-star" style="color:#f1c059"></i>
                 @endif
-               </span><b>{{ $course->Rating }}</b> Star Rating <i style="font-size:15px">({{ $course->Students }} students Enrolled)</i><br>
+               </span><b>{{ $course->Rating }}</b> <br> <i style="font-size:15px">({{ $course->Students }} students Enrolled)</i><br>
            </h6>
            <h5 class="text-center" style="color:red">Created By : {{ $course->Instructor }}</h5>
            <div class="card card-header">
