@@ -68,6 +68,7 @@
               {{$course->CourseTitle}}
               </li>
            </a>
+           <hr>
             @endforeach
            </ul>
         </div>
