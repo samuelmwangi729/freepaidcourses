@@ -9,11 +9,6 @@ use Session;
 use App\Menu;
 class CoursesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     /**
      * Display a listing of the resource.
      *

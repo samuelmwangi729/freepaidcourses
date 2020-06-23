@@ -46,7 +46,7 @@ Route::get('/Courses/View/{menu}',[
     'as'=>'View'
 ]);
 
-Route::get('/Course/Add',[
+Route::get('/Course/EDgXSAqAP7BgLHT/0W0ujLdMFdO6M9U3yLrrpI9urhugjfIagXS',[
     'uses'=>'CoursesController@create',
     'as'=>'course.add'
 ]);
@@ -54,7 +54,7 @@ Route::post('/Course/Store',[
     'uses'=>'CoursesController@store',
     'as'=>'course.store'
 ]);
-Route::get('/Course/All',[
+Route::get('/Course/EDAqAP7B/0W0ujLdMFdO6M9U3yLrrpI9urhugjfI',[
     'uses'=>'CoursesController@index',
     'as'=>'courses'
 ]);
@@ -62,15 +62,15 @@ Route::get('/Course/View/{id}',[
     'uses'=>'CoursesController@show',
     'as'=>'course.view'
 ]);
-Route::get('/Course/Delete/{id}',[
+Route::get('/Course/EDgXSAqAP7BgLHT/0W0ujLdMFdO6M9U3y9urhugjfIagXS/{id}',[
     'uses'=>'CoursesController@destroy',
     'as'=>'course.delete'
 ]);
-Route::get('/Course/Edit/{id}',[
+Route::get('/Course/EDgXSAqAP7BgLHT/0W0ujLdMM9U3yLrrpI9urhugjfIag/{id}',[
     'uses'=>'CoursesController@edit',
     'as'=>'course.edit'
 ]);
-Route::post('/Course/Update/{id}',[
+Route::post('/Course/ESAqAP7BgLHT/0W0ujLdMFdO6M9U3yLrrpI9urhugjfIag/{id}',[
     'uses'=>'CoursesController@update',
     'as'=>'course.update'
 ]);

@@ -58,7 +58,7 @@
                 @endforeach
               </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3" style="width:100%">
             <h2 class="text-center" style="font-weight:bold;font-size:12px">Courses</h2>
             <hr class="featurette-divider">
            <ul class="input-group">
