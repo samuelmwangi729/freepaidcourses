@@ -61,10 +61,10 @@
         <div class="col-sm-3">
             <h2 class="text-center" style="font-weight:bold;font-size:12px">Courses</h2>
             <hr class="featurette-divider">
-           <ul class="input-group">
+           <ul style="list-style:none">
             @foreach($courses as $course)
             <a href="{{ route('Course',[$course->slug]) }}" style="color:black;text-decoration:none;cursor:pointer;font-size:10px;font-weight:bold">
-            <li class="list-group-item">
+            <li>
               {{$course->CourseTitle}}
               </li>
            </a>
