@@ -253,7 +253,7 @@
 <!-- /.control-sidebar -->
 @else
 <script>
-window.open('/')
+window.open('/','_parent')
 </script>
 @endif
 
