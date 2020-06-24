@@ -152,7 +152,7 @@ class CoursesController extends Controller
         $course->CourseBanner=$bannerImage;
         $course->save();
         Session::flash('success','the course has been successfully Updated');
-        return redirect()->back();
+        return redirect('/home');
     }
 
     /**
