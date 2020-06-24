@@ -15,6 +15,7 @@
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
+ @if(Auth::check())
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -210,6 +211,7 @@
     <!-- /.sidebar -->
   </aside>
 
+@if(Auth::check())
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -234,6 +236,7 @@
 @yield('content')
 </div>
 <!-- /.content-wrapper -->
+@endif
 
 <footer class="main-footer">
   <div class="float-right d-none d-sm-block">
@@ -248,6 +251,7 @@
   <!-- Control sidebar content goes here -->
 </aside>
 <!-- /.control-sidebar -->
+ @endif
 </div>
 <!-- ./wrapper -->
 
