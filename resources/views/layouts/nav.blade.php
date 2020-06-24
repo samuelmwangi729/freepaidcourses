@@ -38,7 +38,7 @@
 #nav li a{
   color:black;
   font-weight:bold;
-  font-size: 14px
+  font-size: 10px
 }
 span .fa{
   color:#f1c059;
