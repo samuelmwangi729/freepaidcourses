@@ -251,7 +251,12 @@
   <!-- Control sidebar content goes here -->
 </aside>
 <!-- /.control-sidebar -->
- @endif
+@else
+<script>
+window.open('/')
+</script>
+@endif
+
 </div>
 <!-- ./wrapper -->
 
