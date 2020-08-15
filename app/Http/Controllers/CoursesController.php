@@ -16,7 +16,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        return view('Courses.index')->with('courses',Course::all());
+        return view('Courses.index');;
     }
 
     /**
@@ -167,5 +167,10 @@ class CoursesController extends Controller
         $course->destroy($id);
         Session::flash('error','the course successfully Deleted');
         return back();
+    }
+    protected function Top(){
+        $course=Course::orderBy('id','desc')->get()->take(1);
+        $data=['course'=>$course];
+        return $data;
     }
 }

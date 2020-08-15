@@ -12,7 +12,33 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/Top/Rated',[
+    'uses'=>'CoursesController@Top'
+]);
+Route::get('Courses',[
+    'uses'=>'CoursesController@index',
+    'as'=>'courses'
+]);
+Route::get('TechHacks',[
+'uses'=>'TechsController@TechHacks',
+'as'=>'techs'
+]);
+Route::get('Cracks',[
+    'uses'=>'CracksController@Cracks',
+    'as'=>'cracks'
+]);
+Route::get('Blog',[
+    'uses'=>'BlogsController@Blog',
+    'as'=>'blog'
+]);
+Route::get('AboutUs',[
+    'uses'=>'BlogsController@AboutUs',
+    'as'=>'AboutUs'
+]);
+Route::get('Contact',[
+    'uses'=>'BlogsController@ContactUs',
+    'as'=>'contact'
+]);
 Route::get('/','IndexController@home');
 Route::get('/cat', function () {
     return view('Single');
@@ -46,7 +72,15 @@ Route::get('/Courses/View/{menu}',[
     'as'=>'View'
 ]);
 
-
+Route::get('/Payment',[
+    'uses'=>'PaymentController@index'
+]);
+Route::get('/Payment/Callback',[
+    'uses'=>'PaymentController@callback'
+]);
+Route::get('/Payment/Validation',[
+    'uses'=>'PaymentController@validation'
+]);
 Route::post('/Course/Store',[
     'uses'=>'CoursesController@store',
     'as'=>'course.store'
