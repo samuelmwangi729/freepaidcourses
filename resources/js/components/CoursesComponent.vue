@@ -67,24 +67,26 @@
                   <div class="col-md-3">
                       <div class="d-none d-md-block">
                           <div class="filters">
+                                <h3 style="color: red;">Categories</h3>
                               <div class="filter-item">
-                                  <h3 style="color: red;">Categories</h3>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 12px;">IT&nbsp; &amp; Networking</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2" style="font-weight: bold;font-size: 12px;">Web Development</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3" style="font-weight: bold;font-size: 12px;">Marketing</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4" style="font-weight: bold;font-size: 12px;">Personal</label></div>
+                                  <div class="form-check"  v-for="item in menus" :key="item.id">
+                                      <input class="form-check-input" type="checkbox" id="formCheck-5" @click="getCourse(item.id)">
+                                      <label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 13px;" @click="getCourse(item.id)">{{item.Name}}</label>
+                                    </div>
                               </div>
                               <div class="filter-item">
                                   <h3 style="color: red;">Top Rated</h3>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"><label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 12px;">Complete Ethical Hacking Course</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-6"><label class="form-check-label" for="formCheck-6" style="font-weight: bold;font-size: 12px;">Hacking With Jeff</label></div>
-                                  <div class="form-check"
-                                      style="font-weight: bold;font-size: 12px;"><input class="form-check-input" type="checkbox" id="formCheck-7"><label class="form-check-label" for="formCheck-7">A Complete Web Hacking Guide</label></div>
+                                  <div class="form-check" v-for="item in topRated" :key="item.id">
+                                      <input class="form-check-input" type="checkbox" id="formCheck-5" @click="viewCourse(item.id)">
+                                      <label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 11px;" @click="viewCourse(item.id)">{{item.CourseTitle}}</label>
+                                </div>
                               </div>
                               <div class="filter-item">
                                   <h3 style="color: red;">Highly Viewed</h3>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-8"><label class="form-check-label" for="formCheck-8" style="font-weight: bold;font-size: 12px;">Software Development</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-9"><label class="form-check-label" for="formCheck-9" style="font-weight: bold;font-size: 12px;">Web Hacking</label></div>
+                                  <div class="form-check" v-for="item in highly" :key="item.id">
+                                        <input class="form-check-input" type="checkbox" id="formCheck-5" @click="viewCourse(item.id)">
+                                        <label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 11px;" @click="viewCourse(item.id)">{{item.CourseTitle}}</label>
+                                    </div>
                               </div>
                           </div>
                       </div>
@@ -94,23 +96,21 @@
                               <div class="filters">
                                   <div class="filter-item">
                                       <h3 style="color: red;">Categories</h3>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 12px;">IT&nbsp; &amp; Networking</label></div>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2" style="font-weight: bold;font-size: 12px;">Web Development</label></div>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3" style="font-weight: bold;font-size: 12px;">Marketing</label></div>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4" style="font-weight: bold;font-size: 12px;">Personal</label></div>
+                                       <div class="form-check"  v-for="item in menus" :key="item.id" @click="getCourse(item.id)">
+                                      <label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 13px;">{{item.Name}}</label>
+                                    </div>
                                   </div>
-                                  <div class="filter-item">
-                                      <h3 style="color: red;">Top Rated</h3>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"><label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 12px;">Complete Ethical Hacking Course</label></div>
-                                      <div
-                                          class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-6"><label class="form-check-label" for="formCheck-6" style="font-weight: bold;font-size: 12px;">Hacking With Jeff</label></div>
-                                  <div class="form-check"
-                                      style="font-weight: bold;font-size: 12px;"><input class="form-check-input" type="checkbox" id="formCheck-7"><label class="form-check-label" for="formCheck-7">A Complete Web Hacking Guide</label></div>
+                                    <div class="filter-item">
+                                        <h3 style="color: red;">Top Rated</h3>
+                                        <div class="form-check" v-for="item in topRated" :key="item.id" @click="viewCourse(item.id)">
+                                        <label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 11px;">{{item.CourseTitle}}</label>
+                                    </div>
                               </div>
                               <div class="filter-item">
                                   <h3 style="color: red;">Highly Viewed</h3>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-8"><label class="form-check-label" for="formCheck-8" style="font-weight: bold;font-size: 12px;">Software Development</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-9"><label class="form-check-label" for="formCheck-9" style="font-weight: bold;font-size: 12px;">Web Hacking</label></div>
+                                   <div class="form-check" v-for="item in highly" :key="item.id" @click="viewCourse(item.id)">
+                                        <label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 11px;" @click="viewCourse(item.id)">{{item.CourseTitle}}</label>
+                                    </div>
                               </div>
                           </div>
                       </div>
@@ -119,110 +119,42 @@
               <div class="col-md-9">
                   <div class="products">
                       <div class="row no-gutters">
-                          <div class="col-12 col-md-6 col-lg-4">
+                          <div class="col-12 col-md-6 col-lg-4" v-for="course in courses" :key="course.id">
                               <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
+                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" :src="course.CourseBanner" width="100%"></a></div>
+                                  <div class="product-name"><a href="#">{{course.CourseTitle}}</a></div>
+                                  <b style="font-size:10px;font-weight:bold">Instructor :{{ course.Instructor }}</b> &nbsp;<b style="font-size:10px;font-weight:bold"> {{ course.Students }}  Students Enrolled</b>
                                   <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
+                                      
+                                      <div class="rating">
+                                           <span v-if="course.Rating==1" style="color:gold">
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span v-if="course.Rating==2" style="color:gold">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span v-if="course.Rating==3" style="color:gold">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span v-if="course.Rating==4" style="color:gold">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span v-if="course.Rating==5" style="color:gold">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
                                       <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a><a href="#"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
+                                          <h3><button class="btn btn-danger" @click="viewCourse(course.id)">View Course</button></h3>
                                       </div>
                                   </div>
                               </div>
@@ -248,16 +180,54 @@
 export default{
     data(){
         return{
-            courses:{}
+            courses:[],
+            menus:[],
+            topRated:[],
+            highly:[]
         }
     },
     methods:{
         loadCourses(){
-            console.log('Courses Loading')
+            axios.get('/3fb3I6D1Nfyu7t3jSV3RB74').then((data)=>{
+                this.courses=data.data.courses
+            })
+        },
+       viewCourse(id){
+            axios.post('/vCj1lBA/5D7xhyuEFuIAwabFNqgR',{
+                id:id
+            }).then((data)=>{
+                window.open('/Course/'+data.data.course.slug,'_parent');
+                //open a new window
+            })
+            //post the id and save the details into a session variable 
+        },
+        loadMenus(){
+            axios.get('/NtEeRAZWyEkd6QBNQNphgf7').then((response)=>{
+                this.menus=response.data.menus;
+            })
+        },
+        TopRated(){
+            axios.get('/QNphgf7gGV6qEoh7g').then((response)=>{
+                this.topRated=response.data
+            })
+        },
+        LoadHighly(){
+            axios.get('/FWfROKZ6S84tBlJxm9iX0tLfoz').then((response)=>{
+                this.highly=response.data.courses
+            })
+        },
+        getCourse(id){
+            //get the courses from the categories id posted
+            axios.get('/bz77CIjJaY2B8Soi/'+id).then((response)=>{
+                this.courses=response.data.courses
+            })
         }
     },
     created(){
+        this.LoadHighly()
         this.loadCourses()
+        this.TopRated()
+        this.loadMenus()
     }
 }
 </script>

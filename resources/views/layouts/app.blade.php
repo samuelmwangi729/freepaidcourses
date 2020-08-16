@@ -50,7 +50,7 @@
         </nav>
         @yield('content')
     </div>
-    <footer class="page-footer dark">
+    <footer class="page-footer dark" style="margin-top:20px">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">

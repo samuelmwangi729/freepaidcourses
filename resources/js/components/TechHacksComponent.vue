@@ -8,7 +8,7 @@
                     <!-- Start: Intro -->
                     <div class="intro">
                         <h2>Tech Hacks</h2>
-                        <p>Find&nbsp; latest articles in the IT sector and any related field here</p><a class="btn btn-primary" role="button" href="#articles">Read more<i class="fa fa-chevron-down" style="padding-left: 10px;"></i></a></div>
+                        <p>For the latest trends and new innovations in the IT sector</p><a class="btn btn-primary" role="button" href="#articles">Find Them Here<i class="fa fa-chevron-down" style="padding-left: 10px;"></i></a></div>
                     <!-- End: Intro -->
                 </div>
                 <div class="col-sm-4">
@@ -25,7 +25,7 @@
         <div class="container-fluid" style="margin-top: 90px;">
             <!-- Start: Intro -->
             <div class="intro">
-                <h2 class="text-center" id="articles">Latest Articles</h2>
+                <h2 class="text-center" id="articles">Tech Articles</h2>
             </div>
             <!-- End: Intro -->
             <!-- Start: Articles -->

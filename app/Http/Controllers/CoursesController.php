@@ -173,4 +173,38 @@ class CoursesController extends Controller
         $data=['course'=>$course];
         return $data;
     }
+    protected function getCourse(Request $request){
+        $course=Course::findOrFail($request->id);
+        $data=['course'=>$course];
+        Session(['Course'=>$course]);
+        return $data;
+    }
+    protected function SingleCourse(){
+        return view('Courses.single');
+    }
+    protected function GetLatest(){
+        $course=session()->get('Course');
+        $data=['course'=>$course];
+        return $data;
+    }
+    protected function TopRated(){
+        $topRated=Course::where('Status','=','1')->get()->take(3);
+        $data=['courses'=>$topRated];
+        return $data;
+    }
+    protected function All(){
+        $courses=Course::all();
+        $data=['courses'=>$courses];
+        return $data;
+    }
+    protected function TopRatedMenu(){
+        $top=Course::where('Status','=','2')->get();
+        $data=['courses'=>$top];
+        return $top;
+    }
+    protected function High(){
+        $courses=Course::orderBy('Views','desc')->get()->take(10);
+        $data=['courses'=>$courses];
+        return $data;
+    }
 }

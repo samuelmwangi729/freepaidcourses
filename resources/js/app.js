@@ -5,16 +5,18 @@
  */
 
 require('./bootstrap');
-
+import { Form, HasError, AlertError } from 'vform';
 window.Vue = require('vue');
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+window.Form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+    /**
+     * The following block of code may be used to automatically register your
+     * Vue components. It will recursively scan this directory for the Vue
+     * components and automatically register them with their "basename".
+     *
+     * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+     */
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
@@ -27,6 +29,9 @@ Vue.component('cracks-component', require('./components/CracksComponent.vue').de
 Vue.component('blog-component', require('./components/BlogComponent.vue').default);
 Vue.component('about-component', require('./components/AboutComponent.vue').default);
 Vue.component('contact-component', require('./components/ContactComponent.vue').default);
+Vue.component('single-component', require('./components/SingleComponent.vue').default);
+Vue.component('login-component', require('./components/LoginComponent.vue').default);
+Vue.component('admin-component', require('./components/AdminComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

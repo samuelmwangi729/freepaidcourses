@@ -41,12 +41,13 @@
                     <p style="color: rgb(13,13,13);">This is the course with the most number of students enrolled and with a lot of positive feedbacks</p>
                 </div>
                 <div class="row align-items-center">
-                    <div class="col-md-6"><img class="img-thumbnail rubberBand animated" :src="course.CourseBanner"></div>
+                    <div class="col-md-6"><img class="img-thumbnail rubberBand animated" :src="course.CourseBanner" width="100%"></div>
                     <div class="col-md-6">
-                        <h3>{{course.CourseTitle}}</h3>
+                        <h3 style="color:red;font-weight:bold">{{course.CourseTitle}}</h3>
                         <div class="getting-started-info">
-                            <p style="color: rgb(13,13,13);">jjj</p>
-                        </div><button class="btn btn-outline-primary btn-lg" type="button">Check Out The Course{{course.Students}}}</button></div>
+                            <p style="color: rgb(13,13,13);" v-html=" course.Prerequisites">
+                            </p>
+                        </div><button class="btn btn-outline-primary btn-lg" type="button" @click="viewCourse(course.id)">Check Out The Course</button></div>
                 </div>
             </div>
             <div></div>
@@ -55,23 +56,25 @@
             <div class="container-fluid">
                 <div class="block-heading">
                     <h2 class="text-info">Our Team</h2>
-                    <p style="color: rgb(13,13,13);">We work with a dedicated team who will always post the courses and the coupons any time. We work around the clock to make sure that you got what you need.</p>
+                    <p style="color: rgb(13,13,13);">We are a dedicated team of Developers who
+                         will always post the courses and the coupons any time. We work around the 
+                         clock to make sure that you got what you need.</p>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
-                        <h4>Top Rated Content</h4>
+                    <div class="col-md-5 feature-box">
+                        <h4 style="color:purple">Top Rated Content</h4>
                         <p style="color: rgb(13,13,13);">We offer the Best and top rated courses in e-learning platforms.</p>
                     </div>
-                    <div class="col-md-5 feature-box"><i class="fas fa-credit-card icon"></i>
-                        <h4>Free of Charge</h4>
+                    <div class="col-md-5 feature-box">
+                          <h4 style="color:purple">Free of Charge</h4>
                         <p style="color: rgb(13,13,13);">We provide the courses for free. Beware of anyone who ask you for money to give you any course coupon</p>
                     </div>
-                    <div class="col-md-5 feature-box"><i class="typcn typcn-device-phone icon"></i>
-                        <h4>Responsive Design</h4>
+                    <div class="col-md-5 feature-box">
+                         <h4 style="color:purple">Responsive Design</h4>
                         <p style="color: rgb(13,13,13);">Our Site Is mainly build with a responsivedesign to make sure that the site will always offer best experienceto users using any device to browse through our site</p>
                     </div>
-                    <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
-                        <h4>All Browser Compatibility</h4>
+                    <div class="col-md-5 feature-box">
+                         <h4 style="color:purple">All Browser Compatibility</h4>
                         <p style="color: rgb(13,13,13);">We use the latest technology to make sure that our site is compatible with all the browsers. If Any Issue on Browser Compatibility,Contact Us</p>
                     </div>
                 </div>
@@ -83,25 +86,15 @@
                         <h2 class="text-info" style="font-weight: bold;">Top Rated Courses</h2>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg?h=2bf47f2c2deaed837d2490a2db0a7175">
+                        <div class="col-sm-6 col-lg-4" v-for="course in topRated" :key="course.id">
+                            <div class="card clean-card text-center">
+                                <img class="card-img-top w-100 d-block"  :src="course.CourseBanner" width="90%">
                                 <div class="card-body info">
-                                    <h4 class="card-title">John Smith</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><button class="btn btn-primary" type="button">Learn More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg?h=4178f5c706118a93c77520b6d0b30713">
-                                <div class="card-body info">
-                                    <h4 class="card-title">Robert Downturn</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><button class="btn btn-primary" type="button">Learn More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg?h=4c77b34bb68eaede08fdd5dfec8752b0">
-                                <div class="card-body info">
-                                    <h4 class="card-title">Ally Sanders</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><button class="btn btn-primary" type="button">Learn More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
+                                    <h4 class="card-title">Category : {{course.CourseTitle}}</h4>
+                                    <p class="card-text" style="color:black">{{course.Category}}</p>
+                                    <button class="btn btn-primary" type="button" @click="viewCourse(course.id)">View Course
+                                        <i class="fa fa-chevron-right" style="margin-left: 10px;"></i>
+                                        </button></div>
                             </div>
                         </div>
                     </div>
@@ -167,7 +160,7 @@
 
 		<!-- Header of Slider -->
 		<div class="testimonial_095_header">
-			<h5>what people<span>say</span></h5>
+			<h5>what people<span>say About Us</span></h5>
 		</div>
 		<!-- /Header of Slider -->
 
@@ -186,8 +179,8 @@
 				<!-- Text Layer -->
 				<div class="testimonial_095_slide">
 					<a href="#"><span class="fa fa-twitter"></span></a>
-					<p>Lorem ipsum dolor sit amet <a href="#">@consectetuer</a> adipiscing elit am nibh unc varius facilisis eros ed erat in in velit quis arcu ornare laoreet urabitur.</p>
-					<h5><a href="#">name of consumer</a></h5>
+					<p>Best Provider Ever <a href="#">@freepaidcourses</a> is surely here to help. I will surely support then no matter what</p>
+					<h5><a href="#">Benedict Tuiya</a></h5>
 				</div> <!-- /Text Layer -->
 			</div> <!-- /item -->
 			<!-- End of First Slide -->
@@ -236,7 +229,8 @@
 export default{
     data(){
         return{
-            course:[]
+            course:[],
+            topRated:[]
         }
     },
     methods:{
@@ -244,10 +238,28 @@ export default{
             axios.get('/Top/Rated').then((response)=>{
                 this.course=response.data.course[0]
             })
+        },
+        viewCourse(id){
+            axios.post('vCj1lBA/5D7xhyuEFuIAwabFNqgR',{
+                id:id
+            }).then((data)=>{
+                window.open('/Course/'+data.data.course.slug,'_parent');
+                //open a new window
+            })
+            //post the id and save the details into a session variable 
+        },
+        TopRated(){
+            axios.get('/ZM1LDQPNwhQ1wRDEpn5oe').then((response)=>{
+                this.topRated=response.data.courses
+                console.log(this.topRated)
+            }).catch((error)=>{
+                console.log(err)
+            })
         }
     },
     created(){
       this.loadTop()
+      this.TopRated()
     }
 }
 </script>

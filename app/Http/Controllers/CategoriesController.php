@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Menu;
-use Session;
-class MenusController extends Controller
+use App\{Menu,Course};
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class MenusController extends Controller
      */
     public function index()
     {
-        $menus=Menu::all();
-        return view('Menus.Index')->with('menus',$menus);
+        //
     }
 
     /**
@@ -36,14 +34,7 @@ class MenusController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'Name'=>'required|unique:menus'
-        ]);
-        Menu::create([
-            'Name'=>$request->Name
-        ]);
-        Session::flash('success','Menu Successfully Added');
-        return back();
+        //
     }
 
     /**
@@ -88,14 +79,14 @@ class MenusController extends Controller
      */
     public function destroy($id)
     {
-        $menu=Menu::find($id);
-        $menu->destroy($id);
-        Session::flash('error','Menu Successfully Deleted');
-        return back();
+        //
     }
-    protected function Menus(){
-        $menus=Menu::all();
-        $data=['menus'=>$menus];
+    protected function GetCourse($id){
+        //get the category Name from the categories, ie the menus 
+        $menu=Menu::findOrFail($id);
+        $category=$menu->Name;
+        $courses=Course::where('Category','=',$category)->get();
+        $data=['courses'=>$courses];
         return $data;
     }
 }

@@ -12,6 +12,33 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('vCj1lBA/5D7xhyuEFuIAwabFNqgR',[
+    'uses'=>'CoursesController@getCourse'
+]);
+Route::get('/ZM1LDQPNwhQ1wRDEpn5oe',[
+    'uses'=>'CoursesController@TopRated'
+]);
+Route::get('/3fb3I6D1Nfyu7t3jSV3RB74',[
+    'uses'=>'CoursesController@All'
+]);
+Route::get('Course/{slug}',[
+    'uses'=>'CoursesController@SingleCourse'
+]);
+Route::get('PY7Ux7bqLcOYSET',[
+    'uses'=>'CoursesController@GetLatest'
+]);
+Route::get('NtEeRAZWyEkd6QBNQNphgf7',[
+    'uses'=>'MenusController@Menus'
+]);
+Route::get('/QNphgf7gGV6qEoh7g',[
+    'uses'=>'CoursesController@TopRatedMenu'
+]);
+Route::get('/FWfROKZ6S84tBlJxm9iX0tLfoz',[
+    'uses'=>'CoursesController@High'
+]);
+Route::get('/bz77CIjJaY2B8Soi/{id}',[
+    'uses'=>'CategoriesController@GetCourse'
+]);
 Route::get('/Top/Rated',[
     'uses'=>'CoursesController@Top'
 ]);
