@@ -193,6 +193,144 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                Courses
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('menus') }}" class="nav-link">
+                  <i class="fa fa-bars nav-icon"></i>
+                  <p>Add Courses</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('course.add') }}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Manage Courses</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                Tech Hacks
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('menus') }}" class="nav-link">
+                  <i class="fa fa-bars nav-icon"></i>
+                  <p>Add Courses</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('course.add') }}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Manage Courses</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                Blog
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('menus') }}" class="nav-link">
+                  <i class="fa fa-bars nav-icon"></i>
+                  <p>Add Courses</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('course.add') }}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Manage Courses</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                Software Cracks
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('menus') }}" class="nav-link">
+                  <i class="fa fa-bars nav-icon"></i>
+                  <p>Add Courses</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('course.add') }}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Manage Courses</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                Requests
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('menus') }}" class="nav-link">
+                  <i class="fa fa-bars nav-icon"></i>
+                  <p>Add Courses</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('course.add') }}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Manage Courses</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                Messages
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('menus') }}" class="nav-link">
+                  <i class="fa fa-bars nav-icon"></i>
+                  <p>Add Courses</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('course.add') }}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Manage Courses</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault();
@@ -242,7 +380,7 @@
   <div class="float-right d-none d-sm-block">
     <b>Version</b> 3.0.2
   </div>
-  <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+  <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">{{ config('app.name') }}</a>.</strong> All rights
   reserved.
 </footer>
 

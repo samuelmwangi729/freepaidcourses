@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-info">
+                <div class="small-box bg-danger">
                     <div class="inner">
                         <h3>150</h3>
 
@@ -18,7 +18,7 @@
             </div>
             <div class="col-lg-3 col-6">
                  <!-- small box -->
-                <div class="small-box bg-info">
+                <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>150</h3>
 
@@ -33,7 +33,7 @@
             </div>
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-info">
+                <div class="small-box bg-dark">
                     <div class="inner">
                         <h3>150</h3>
 
@@ -48,7 +48,7 @@
             </div>
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-info">
+                <div class="small-box bg-primary">
                     <div class="inner">
                         <h3>150</h3>
 
@@ -61,8 +61,67 @@
                 </div>
                 <!--End Small-box-->
             </div>
+            <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-primary">
+                    <div class="inner">
+                        <h3>150</h3>
+
+                        <p>Cracks Categories</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-list"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            <!--End Small-box-->
+            </div>
+             <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>150</h3>
+
+                        <p>Tech Categories</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-list"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <!--End Small-box-->
+            </div>
+             <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>150</h3>
+
+                        <p>Courses Requests</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-question-circle"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <!--End Small-box-->
+            </div>
+             <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>150</h3>
+
+                        <p>Messages</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <!--End Small-box-->
+            </div>
           <div class="col-6 col-lg-3">
-              Charts
                 <canvas id="myChart" width="400" height="400"></canvas>
           </div>
         </div>
