@@ -91,9 +91,8 @@
             <p>© 2020 | All Rights Reserved | Free Paid Courses</p>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="{{ asset('assets/js/script.min.js?h=3f4b3a30c7029ccb9685fa2dae9293eb') }}"></script>
+    <script src="{{ asset('assets/js/script.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
             <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
             <script src="{{ asset('js/app.js') }}" defer></script>

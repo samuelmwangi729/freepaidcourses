@@ -2,7 +2,7 @@
 @section('content')
 
     <!-- Main content -->
-    <section class="content container-fluid" id="app">
+    <section class="content container-fluid">
       <admin-component></admin-component>  
       </section>
       <!-- /.content -->

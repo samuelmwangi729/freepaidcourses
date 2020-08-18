@@ -112,6 +112,10 @@ Route::post('/Course/Store',[
     'uses'=>'CoursesController@store',
     'as'=>'course.store'
 ]);
+Route::get('/Courses/Manage',[
+    'uses'=>'CoursesController@Manage',
+    'as'=>'courses.manage'
+]);
 Route::get('/Course/EDAqAP7B/0W0ujLdMFdO6M9U3yLrrpI9urhugjfI',[
     'uses'=>'CoursesController@index',
     'as'=>'courses'
@@ -136,5 +140,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/Course/EDgXSAqAP7BgLHT/0W0ujLdMFdO6M9U3yLrrpI9urhugjfIagXS',[
         'uses'=>'CoursesController@create',
         'as'=>'course.add'
+    ]);
+    Route::post('Course/JPUFR37qMEr64CHDO0UiQQAIiniSy/{id}',[
+        'uses'=>'CoursesController@destroy',
+        'as'=>'course.delete'
+    ]);
+    Route::get('Course/View/4qnPjr6Ycg66gOfqyUXQagQSSkp3/{id}',[
+        'uses'=>'CoursesController@show'
     ]);
 });

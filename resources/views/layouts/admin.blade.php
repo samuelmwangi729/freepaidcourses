@@ -165,51 +165,28 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{ route('home') }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('menus') }}" class="nav-link">
-                  <i class="fa fa-bars nav-icon"></i>
-                  <p>Menus</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('course.add') }}" class="nav-link">
-                  <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Add Course</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('courses') }}" class="nav-link">
-                  <i class="fa fa-eye nav-icon"></i>
-                  <p>Courses</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-book"></i>
-              <p>
-                Courses
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
+             <a href="{{ route('home') }}" class="nav-link">
+                  <i class="fa fa-user-graduate nav-icon"></i>
+                  <p> Courses</p>
+                  <i class="right fas fa-angle-left"></i>
+             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('menus') }}" class="nav-link">
+                <a href="{{ route('course.add') }}" class="nav-link">
                   <i class="fa fa-bars nav-icon"></i>
                   <p>Add Courses</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('course.add') }}" class="nav-link">
+                <a href="{{ route('courses.manage') }}" class="nav-link">
                   <i class="fa fa-plus-circle nav-icon"></i>
                   <p>Manage Courses</p>
                 </a>
@@ -232,7 +209,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('course.add') }}" class="nav-link">
+                <a href="{{ route('courses') }}" class="nav-link">
                   <i class="fa fa-plus-circle nav-icon"></i>
                   <p>Manage Courses</p>
                 </a>
@@ -371,7 +348,9 @@
    <div class="container">
     @include('layouts.errors')
    </div>
-@yield('content')
+   <div id="app">
+     @yield('content')
+   </div>
 </div>
 <!-- /.content-wrapper -->
 @endif
@@ -402,5 +381,9 @@ window.open('/','_parent')
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/summernote.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+<script>
+$('#summernote').summernote()
+$('.summernote').summernote()
+</script>
 </body>
 </html>

@@ -38,6 +38,8 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request->all();
+        // die();
         $this->validate($request,[
             'CourseTitle'=>'required|unique:courses',
             'Instructor'=>'required',
@@ -84,8 +86,14 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        $course=Course::find($id);
-        return view('Courses.Single')->with('course',$course);
+        $course=Course::findOrFail($id);
+        if($course){
+            $data=['course'=>$course];
+            return $data;
+        }else{
+            $data=['course'=>'Not Found'];
+            return $data;
+        }
     }
 
     public function edit($id)
@@ -164,9 +172,11 @@ class CoursesController extends Controller
     public function destroy($id)
     {
         $course=Course::find($id);
-        $course->destroy($id);
-        Session::flash('error','the course successfully Deleted');
-        return back();
+        if($course){
+            $course->delete();
+            $data=['Status'=>'success'];
+            return $data;
+        }
     }
     protected function Top(){
         $course=Course::orderBy('id','desc')->get()->take(1);
@@ -206,5 +216,8 @@ class CoursesController extends Controller
         $courses=Course::orderBy('Views','desc')->get()->take(10);
         $data=['courses'=>$courses];
         return $data;
+    }
+    protected function Manage(){
+        return view('Courses.ViewAll');
     }
 }

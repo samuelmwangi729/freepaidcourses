@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Start: Animated Type Heading -->				
+<!-- Start: Animated Type Heading -->				
                 <div class="caption v-middle text-center">
 					<h1 class="cd-headline clip">
 			            <span class="blc">We are| </span>

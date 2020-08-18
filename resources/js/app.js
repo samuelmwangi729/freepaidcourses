@@ -7,9 +7,20 @@
 require('./bootstrap');
 import { Form, HasError, AlertError } from 'vform';
 window.Vue = require('vue');
+import VueRouter from 'vue-router';
+import swal from 'sweetalert';
+Vue.use(VueRouter)
 window.Form = Form;
+window.swal = swal;
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
+let routes = [{
+    path: '/home',
+    component: require('./components/Admin.vue')
+}]
+const router = new VueRouter({
+        routes
+    })
     /**
      * The following block of code may be used to automatically register your
      * Vue components. It will recursively scan this directory for the Vue
@@ -31,7 +42,9 @@ Vue.component('about-component', require('./components/AboutComponent.vue').defa
 Vue.component('contact-component', require('./components/ContactComponent.vue').default);
 Vue.component('single-component', require('./components/SingleComponent.vue').default);
 Vue.component('login-component', require('./components/LoginComponent.vue').default);
-Vue.component('admin-component', require('./components/AdminComponent.vue').default);
+Vue.component('admin-component', require('./components/Admin.vue').default);
+Vue.component('addcourse-component', require('./components/AddCourse.vue').default);
+Vue.component('viewcourses-component', require('./components/ViewCourses.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -41,4 +54,5 @@ Vue.component('admin-component', require('./components/AdminComponent.vue').defa
 
 const app = new Vue({
     el: '#app',
+    router
 });
