@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTechesTable extends Migration
+class CreateTechCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateTechesTable extends Migration
      */
     public function up()
     {
-        Schema::create('teches', function (Blueprint $table) {
+        Schema::create('tech_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('Title');
-            $table->string('Slug');
             $table->string('Category');
-            $table->string('IntroText');
-            $table->longText('Description');
-            $table->string('FeaturedImage');
             $table->string('Status')->default(0);
             $table->timestamps();
         });
@@ -33,6 +28,6 @@ class CreateTechesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teches');
+        Schema::dropIfExists('tech_categories');
     }
 }

@@ -45,6 +45,8 @@ Vue.component('login-component', require('./components/LoginComponent.vue').defa
 Vue.component('admin-component', require('./components/Admin.vue').default);
 Vue.component('addcourse-component', require('./components/AddCourse.vue').default);
 Vue.component('viewcourses-component', require('./components/ViewCourses.vue').default);
+Vue.component('techs-component', require('./components/TechHacks.vue').default);
+Vue.component('gethacks-component', require('./components/GetHacks.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ config('app.name') }}</title>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -194,7 +197,7 @@
             </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="javacsript::void()" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                 Tech Hacks
@@ -203,9 +206,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('menus') }}" class="nav-link">
+                <a href="{{ route('Techs.index') }}" class="nav-link">
                   <i class="fa fa-bars nav-icon"></i>
-                  <p>Add Courses</p>
+                  <p>Add Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('Techs.create') }}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Add Hacks</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -382,8 +391,12 @@ window.open('/','_parent')
 <script src="{{ asset('js/summernote.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 <script>
-$('#summernote').summernote()
-$('.summernote').summernote()
+$('#summernote').summernote({
+  height: 400
+})
+$('.summernote').summernote({
+  height:400
+})
 </script>
 </body>
 </html>

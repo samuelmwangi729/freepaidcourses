@@ -136,6 +136,7 @@ class CoursesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($id);
         $bannerImage=$request->CourseBanner;
         //Assign the variables
         $title=$request->CourseTitle;

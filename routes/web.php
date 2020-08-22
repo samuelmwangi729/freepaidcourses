@@ -112,6 +112,18 @@ Route::post('/Course/Store',[
     'uses'=>'CoursesController@store',
     'as'=>'course.store'
 ]);
+Route::get('/FetchHacks',[
+    'uses'=>'TechsController@getAll'
+]);
+Route::get('Hack/Show/{id}',[
+    'uses'=>'TechsController@show'
+]);
+Route::get('Delete/Hack/{id}',[
+    'uses'=>'TechsController@destroy'
+]);
+Route::post('/Course/Update/id',[
+    'uses'=>'CoursesController@Update'
+]);
 Route::get('/Courses/Manage',[
     'uses'=>'CoursesController@Manage',
     'as'=>'courses.manage'
@@ -129,9 +141,19 @@ Route::group(['middleware' => ['auth']], function () {
         'uses'=>'CoursesController@destroy',
         'as'=>'course.delete'
     ]);
+    Route::resource('Techs','TechsController');
     Route::get('/Course/EDgXSAqAP7BgLHT/0W0ujLdMM9U3yLrrpI9urhugjfIag/{id}',[
         'uses'=>'CoursesController@edit',
         'as'=>'course.edit'
+    ]);
+    Route::post('vqgjiDdKDjvKgp49o',[
+        'uses'=>'TechsController@Categories'
+    ]);
+    Route::get('/cJGqyURLYO9HbcO3F0VH1',[
+        'uses'=>'TechsController@getCategories'
+    ]);
+    Route::post('Category/JKv6i9IqrBhh2hZgObRAOs6HPAzZQZW2Uv',[
+        'uses'=>'TechsController@deleteCat'
     ]);
     Route::post('/Course/ESAqAP7BgLHT/0W0ujLdMFdO6M9U3yLrrpI9urhugjfIag/{id}',[
         'uses'=>'CoursesController@update',
