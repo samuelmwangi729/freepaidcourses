@@ -47,6 +47,11 @@ Vue.component('addcourse-component', require('./components/AddCourse.vue').defau
 Vue.component('viewcourses-component', require('./components/ViewCourses.vue').default);
 Vue.component('techs-component', require('./components/TechHacks.vue').default);
 Vue.component('gethacks-component', require('./components/GetHacks.vue').default);
+Vue.component('getblogs-component', require('./components/GetBlogs.vue').default);
+Vue.component('blogmenu-component', require('./components/BlogMenu.vue').default);
+Vue.component('cmenu-component', require('./components/CracksMenu.vue').default);
+Vue.component('allcracks-component', require('./components/Cracks.vue').default);
+Vue.component('messages-component', require('./components/Messages.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

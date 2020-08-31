@@ -29,22 +29,10 @@
                           <div class="filters">
                               <div class="filter-item">
                                   <h3 style="color: red;">Categories</h3>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 12px;">IT&nbsp; &amp; Networking</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2" style="font-weight: bold;font-size: 12px;">Web Development</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3" style="font-weight: bold;font-size: 12px;">Marketing</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4" style="font-weight: bold;font-size: 12px;">Personal</label></div>
-                              </div>
-                              <div class="filter-item">
-                                  <h3 style="color: red;">Top Rated</h3>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"><label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 12px;">Complete Ethical Hacking Course</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-6"><label class="form-check-label" for="formCheck-6" style="font-weight: bold;font-size: 12px;">Hacking With Jeff</label></div>
-                                  <div class="form-check"
-                                      style="font-weight: bold;font-size: 12px;"><input class="form-check-input" type="checkbox" id="formCheck-7"><label class="form-check-label" for="formCheck-7">A Complete Web Hacking Guide</label></div>
-                              </div>
-                              <div class="filter-item">
-                                  <h3 style="color: red;">Highly Viewed</h3>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-8"><label class="form-check-label" for="formCheck-8" style="font-weight: bold;font-size: 12px;">Software Development</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-9"><label class="form-check-label" for="formCheck-9" style="font-weight: bold;font-size: 12px;">Web Hacking</label></div>
+                                    <div class="form-check" v-for="category in categories" :key="category.id">
+                                      <label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 12px;" @click="getCat(category.Name)">
+                                      {{ category.Name }}</label>
+                                    </div>
                               </div>
                           </div>
                       </div>
@@ -53,25 +41,12 @@
                               id="filters">
                               <div class="filters">
                                   <div class="filter-item">
-                                      <h3 style="color: red;">Categories</h3>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 12px;">IT&nbsp; &amp; Networking</label></div>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2" style="font-weight: bold;font-size: 12px;">Web Development</label></div>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3" style="font-weight: bold;font-size: 12px;">Marketing</label></div>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4" style="font-weight: bold;font-size: 12px;">Personal</label></div>
+                                       <h3 style="color: red;">Categories</h3>
+                                      <div class="form-check" v-for="category in categories" :key="category.id">
+                                      <label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 12px;" @click="getCat(category.Name)">
+                                      {{ category.Name }}</label>
+                                    </div>
                                   </div>
-                                  <div class="filter-item">
-                                      <h3 style="color: red;">Top Rated</h3>
-                                      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"><label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 12px;">Complete Ethical Hacking Course</label></div>
-                                      <div
-                                          class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-6"><label class="form-check-label" for="formCheck-6" style="font-weight: bold;font-size: 12px;">Hacking With Jeff</label></div>
-                                  <div class="form-check"
-                                      style="font-weight: bold;font-size: 12px;"><input class="form-check-input" type="checkbox" id="formCheck-7"><label class="form-check-label" for="formCheck-7">A Complete Web Hacking Guide</label></div>
-                              </div>
-                              <div class="filter-item">
-                                  <h3 style="color: red;">Highly Viewed</h3>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-8"><label class="form-check-label" for="formCheck-8" style="font-weight: bold;font-size: 12px;">Software Development</label></div>
-                                  <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-9"><label class="form-check-label" for="formCheck-9" style="font-weight: bold;font-size: 12px;">Web Hacking</label></div>
-                              </div>
                           </div>
                       </div>
                   </div>
@@ -79,124 +54,24 @@
               <div class="col-md-9">
                   <div class="products">
                       <div class="row no-gutters">
-                          <div class="col-12 col-md-6 col-lg-4">
+                          <div class="col-12 col-md-6 col-lg-4" v-for="crack in cracks" :key="crack.id">
                               <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
+                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" :src="crack.FeaturedImage" style="height:400px !important"></a></div>
+                                  <div class="product-name text-center"><a href="#">{{crack.CrackTitle}}</a></div>{{ crack.IntroText }}
                                   <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
+                                      <div class="rating">
+                                          <i class="fa fa-star" style="color:gold"></i>
+                                          <i class="fa fa-star" style="color:gold"></i>
+                                          <i class="fa fa-star" style="color:gold"></i>
+                                          <i class="fa fa-star" style="color:gold"></i>
+                                          <i class="fa fa-star" style="color:gold"></i>
                                       </div>
+                                     <button class="btn btn-outline-danger" @click="View(crack.Slug)">More <i class="fa fa-chevron-right" ></i></button>
                                   </div>
                               </div>
                           </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                              <div class="clean-product-item">
-                                  <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg?h=04515e999c5ef88bfebde7ef512bec67"></a><a href="#"></a></div>
-                                  <div class="product-name"><a href="#">Lorem ipsum dolor sit amet</a></div>
-                                  <div class="about">
-                                      <div class="rating"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star.svg?h=6a5bf50661a8e494efd6f3408b44f8b0"><img src="assets/img/star-half-empty.svg?h=52643cdf5581ce4b2bc133d700b32857"><img src="assets/img/star-empty.svg?h=67e3ef1204a154c2af6db4a9eaf69156"></div>
-                                      <div class="price">
-                                          <h3>$100</h3>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+
                       </div>
-                      <nav>
-                          <ul class="pagination">
-                              <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                          </ul>
-                      </nav>
                   </div>
               </div>
           </div>
@@ -208,16 +83,39 @@
 export default{
     data(){
         return{
-            courses:{}
+            cracks:[],
+            categories:[],
+            count:''
         }
     },
     methods:{
-        loadCourses(){
-            console.log('Courses Loading')
+        View(slug){
+            window.open('/Crack/'+slug,'_parent');
+        },
+        getCat(cat){
+            axios.get('/sppCat/'+cat).then((response)=>{
+                this.cracks=response.data
+                this.count=this.cracks.length
+                if(this.cracks.length==0){
+                    swal("Ooh No!", "No cracks Available!!!!Kindly Check Again Later", "warning");
+                }
+                // console.log(response.data)
+            })
+        },
+        loadCategories(){
+            axios.get('/getCracksMenu').then((response)=>{
+                this.categories=response.data
+            })
+        },
+        loadCracks(){
+           axios.get('/getCracks').then((response)=>{
+               this.cracks=response.data
+           })
         }
     },
     created(){
-        this.loadCourses()
+        this.loadCategories()
+        this.loadCracks()
     }
 }
 </script>

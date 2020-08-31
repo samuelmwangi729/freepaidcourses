@@ -182,6 +182,12 @@
                   <i class="right fas fa-angle-left"></i>
              </a>
             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('menus') }}" class="nav-link">
+                      <i class="fa fa-bars nav-icon"></i>
+                      <p>Add Menus</p>
+                    </a>
+                </li>
               <li class="nav-item">
                 <a href="{{ route('course.add') }}" class="nav-link">
                   <i class="fa fa-bars nav-icon"></i>
@@ -234,16 +240,16 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('bmenus') }}" class="nav-link">
+                      <i class="fa fa-bars nav-icon"></i>
+                      <p>Add Menus</p>
+                    </a>
+                </li>
               <li class="nav-item">
-                <a href="{{ route('menus') }}" class="nav-link">
+                <a href="{{ route('blog.create') }}" class="nav-link">
                   <i class="fa fa-bars nav-icon"></i>
-                  <p>Add Courses</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('course.add') }}" class="nav-link">
-                  <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Manage Courses</p>
+                  <p>Add Blog Post </p>
                 </a>
               </li>
             </ul>
@@ -258,20 +264,26 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('menus') }}" class="nav-link">
+                <a href="{{ route('cracks.index') }}" class="nav-link">
                   <i class="fa fa-bars nav-icon"></i>
-                  <p>Add Courses</p>
+                  <p>Add Cracks Menu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('course.add') }}" class="nav-link">
+                <a href="{{ route('cracks.create') }}" class="nav-link">
                   <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Manage Courses</p>
+                  <p>Add Cracks</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('cracks.manage') }}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Manage Cracks</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
+          {{--  <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
@@ -293,7 +305,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li>  --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
@@ -304,15 +316,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('menus') }}" class="nav-link">
+                <a href="{{ route('messages') }}" class="nav-link">
                   <i class="fa fa-bars nav-icon"></i>
-                  <p>Add Courses</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('course.add') }}" class="nav-link">
-                  <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Manage Courses</p>
+                  <p>View Messages</p>
                 </a>
               </li>
             </ul>

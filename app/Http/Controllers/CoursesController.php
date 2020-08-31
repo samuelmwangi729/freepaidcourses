@@ -136,7 +136,7 @@ class CoursesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($id);
+        // dd($request->all());
         $bannerImage=$request->CourseBanner;
         //Assign the variables
         $title=$request->CourseTitle;
@@ -180,7 +180,7 @@ class CoursesController extends Controller
         }
     }
     protected function Top(){
-        $course=Course::orderBy('id','desc')->get()->take(1);
+        $course=Course::orderBy('id','asc')->get()->take(1);
         $data=['course'=>$course];
         return $data;
     }
@@ -190,8 +190,10 @@ class CoursesController extends Controller
         Session(['Course'=>$course]);
         return $data;
     }
-    protected function SingleCourse(){
-        return view('Courses.single');
+    protected function SingleCourse($slug){
+        $course=Course::where('Slug','=',$slug)->get()->first();
+        // dd($course);
+        return view('Courses.single')->with('course',$course);
     }
     protected function GetLatest(){
         $course=session()->get('Course');

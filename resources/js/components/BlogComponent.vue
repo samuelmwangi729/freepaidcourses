@@ -2,7 +2,7 @@
     <div class="container-fluid">
 <!-- Start: Highlight Phone -->
     <div class="highlight-phone" style="margin-top: 90px;">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
                     <!-- Start: Intro -->
@@ -30,20 +30,56 @@
             <!-- End: Intro -->
             <!-- Start: Articles -->
             <div class="row articles">
-                <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/desk.jpg?h=48517c5de1e0a97c47195a8c2a6fa5ea"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
-                <div
-                    class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/building.jpg?h=d468a07214c501ac1b41314b67eff488"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
-            <div
-                class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/loft.jpg?h=1e943b34582419a55451e4baa5bad9ac"></a>
-                <h3 class="name">Article Title</h3>
-                <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
-    </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                         <div class="col-sm-6 col-md-4 item" v-for="item in blogs" :key="item.id">
+                            <a href="#"><img class="img-fluid" :src="item.FeaturedImage"></a>
+                            <h3 class="name">{{item.BlogTitle}}</h3>
+                            <p class="description">
+                                {{ item.IntroText }}
+                            </p><btn class="btn btn-outline-success" @click="Open(item.Slug)">More Info.<i class="fa fa-chevron-right"></i></btn>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    Categories
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="category in categories" :key="category.id">{{ category.Name }}</li>
+                    </ul>
+                </div>
+            </div>
     <!-- End: Articles -->
     </div>
     </div>
     </div>
 </template>
+<script>
+    export default{
+        data(){
+            return{
+                categories:[],
+                blogs:[]
+            }
+        },
+        methods:{
+            Open(slug){
+                window.open('/GetSingleBlog/'+slug,'_parent');
+            },
+            loadCategories(){
+            axios.get('/getBlogCategories').then((response)=>{
+                this.categories=response.data
+                console.log(response.data)
+            })
+            },
+            loadBlogs(){
+                axios.get('/getBlogs').then((response)=>{
+                    this.blogs=response.data
+                })
+            }
+        },
+        created(){
+            this.loadBlogs()
+            this.loadCategories()
+        }
+    }
+</script>

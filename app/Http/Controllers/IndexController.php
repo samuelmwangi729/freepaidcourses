@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Course,Menu};
+use App\{Course,Menu,Messages};
 class IndexController extends Controller
 {
     public function index(){
@@ -20,5 +20,21 @@ class IndexController extends Controller
         ->with('courses',$courses)
         ->with('active',$active)
         ;
+    }
+    protected function store(Request $request){
+        Messages::create([
+            'Name'=>$request->Name,
+            'Subject'=>$request->Subject,
+            'Email'=>$request->Email,
+            'Message'=>$request->Message,
+        ]);
+        return "true";
+    }
+    protected function Messages(){
+        return view('Messages');
+    }
+    protected function Api(){
+        $messages=Messages::all();
+        return $messages;
     }
 }

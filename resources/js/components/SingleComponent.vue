@@ -17,7 +17,7 @@
         <div class="row" style="margin-top:20px">
             <div class="col-sm-7" style="background-color:#ef9797">
              <img class="img-thumbnail rubberBand animated" :src="course.CourseBanner" width="100%">
-             <span v-html="course.Description"> </span>
+             <span v-html="course.Description"> {{course.Description}}</span>
             </div>
             <div class="col-sm-5">
              <span v-html="course.Prerequisites" style="color:black !important"></span>
@@ -78,7 +78,7 @@ export default{
            if(ans){
                 window.open(link,'_blank');
            }
-           
+
         }
     },
     created(){

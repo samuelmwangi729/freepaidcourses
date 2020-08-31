@@ -15,7 +15,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group text-center"  style="margin-top:20px">
                                         <input type="text" v-model="CourseTitle" class="form-control"   name="CourseTitle" placeholder="Course Title" autocomplete style="width:90%;margin-left:10px;margin-right:10px !important">
-                                       
+
                                 </div>
                             </div>
                             <!--end col sm-6-->
@@ -25,35 +25,35 @@
                                            <option label="Select Category"></option>
                                            <option v-for="menu in menus" :key="menu.id" :value="menu.Name">{{menu.Name}}</option>
                                        </select>
-                                       
+
                                 </div>
                             </div>
                             <!--end col sm-6-->
                           <div class="col-sm-6">
                                 <div class="form-group text-center"  style="margin-top:20px">
                                         <input type="text" v-model="Instructor" class="form-control"   name="Instructor" placeholder="Course Instructor" autocomplete style="width:90%;margin-left:10px;margin-right:10px !important">
-                                      
+
                                 </div>
                             </div>
                             <!--end col sm-6-->
                             <div class="col-sm-6">
                                 <div class="form-group text-center"  style="margin-top:20px">
                                         <input type="number" v-model="Rating" class="form-control"  name="Rating" placeholder="Course Rating" autocomplete style="width:90%;margin-left:10px;margin-right:10px !important">
-                                      
+
                                 </div>
                             </div>
                             <!--end col sm-6-->
                              <div class="col-sm-6">
                                 <div class="form-group text-center"  style="margin-top:20px">
                                         <input type="number" v-model="Students" class="form-control"   name="Students" placeholder="Course Students Enrolled" autocomplete style="width:90%;margin-left:10px;margin-right:10px !important">
-                                       
+
                                 </div>
                             </div>
                             <!--end col sm-6-->
                              <div class="col-sm-6">
                                 <div class="form-group text-center"  style="margin-top:20px">
                                         <input type="text" v-model="CourseLink" class="form-control"  name="CourseLink" placeholder="Course Link" autocomplete style="width:90%;margin-left:10px;margin-right:10px !important">
-                                    
+
                                 </div>
                             </div>
                             <!--end col sm-6-->
@@ -61,20 +61,20 @@
                          <div class="col-sm-6 offset-sm-3">
                                 <div class="form-group text-center"  style="margin-top:20px">
                                         <input type="text" v-model="CourseBanner" class="form-control"   name="CourseBanner" placeholder="Course Banner" autocomplete style="width:90%;margin-left:10px;margin-right:10px !important">
-                                       
+
                                 </div>
                             </div>
                             <!--end col sm-12-->
                             <div class="col-sm-12">
-                                <div class="form-group text-center">
+                                <div class="form-group">
                                     <textarea v-model="Prerequisites" class="form-control" id="summernote"   name="Prerequisites"  placeholder="Course Prerequisites"></textarea>
-                                      
+
                                 </div>
                             </div>
                             <!--end col-sm-12-->
                              <div class="col-sm-12">
-                                <div class="form-group text-center">
-                                    <textarea v-model="Description" :html="Description" class="form-control summernote"   name="Description"  placeholder="Description here"></textarea>
+                                <div class="form-group">
+                                    <textarea v-model="Description" class="form-control summernote"   name="Description"  placeholder="Description here"></textarea>
                                 </div>
                             </div>
                             <!--end col-sm-12-->

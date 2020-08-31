@@ -44,8 +44,8 @@
                     <div class="col-md-6"><img class="img-thumbnail rubberBand animated" :src="course.CourseBanner" width="100%"></div>
                     <div class="col-md-6">
                         <h3 style="color:red;font-weight:bold">{{course.CourseTitle}}</h3>
-                        <div class="getting-started-info">
-                            <p style="color: rgb(13,13,13);" v-html=" course.Prerequisites">
+                        <div class="getting-started-info" style="background-color:black;opacity:.5">
+                            <p style="padding-left:30px" v-html="course.Prerequisites">
                             </p>
                         </div><button class="btn btn-outline-primary btn-lg" type="button" @click="viewCourse(course.id)">Check Out The Course</button></div>
                 </div>
@@ -57,7 +57,7 @@
                 <div class="block-heading">
                     <h2 class="text-info">Our Team</h2>
                     <p style="color: rgb(13,13,13);">We are a dedicated team of Developers who
-                         will always post the courses and the coupons any time. We work around the 
+                         will always post the courses and the coupons any time. We work around the
                          clock to make sure that you got what you need.</p>
                 </div>
                 <div class="row justify-content-center">
@@ -87,8 +87,9 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-sm-6 col-lg-4" v-for="course in topRated" :key="course.id">
+                            <!-- {{ course }} -->
                             <div class="card clean-card text-center">
-                                <img class="card-img-top w-100 d-block"  :src="course.CourseBanner" width="90%">
+                                <img class="card-img-top w-100 d-block"  :src="course.CourseBanner">
                                 <div class="card-body info">
                                     <h4 class="card-title">Category : {{course.CourseTitle}}</h4>
                                     <p class="card-text" style="color:black">{{course.Category}}</p>
@@ -195,7 +196,7 @@
 				</div> <!-- /Text Layer -->
 			</div> <!-- /item -->
 			<!-- End of Second Slide -->
-			
+
 			<!-- Third Slide -->
 			<div class="carousel-item">
 				<!-- Text Layer -->
@@ -246,7 +247,7 @@ export default{
                 window.open('/Course/'+data.data.course.slug,'_parent');
                 //open a new window
             })
-            //post the id and save the details into a session variable 
+            //post the id and save the details into a session variable
         },
         TopRated(){
             axios.get('/ZM1LDQPNwhQ1wRDEpn5oe').then((response)=>{

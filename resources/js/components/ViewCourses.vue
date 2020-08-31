@@ -21,7 +21,7 @@
                          <h6>Instructor: {{course.Instructor}}</h6>
                          <h6>Students: {{course.Students}}</h6>
                          <h6>Rating: <span v-if="course.Rating==1" style="color:gold">
-                                                <i class="fa fa-star"></i> 
+                                                <i class="fa fa-star"></i>
                                             </span>
                                             <span v-if="course.Rating==2" style="color:gold">
                                                 <i class="fa fa-star"></i>
@@ -145,7 +145,7 @@
                                 <div class="form-group text-center">
                                     <label class="label-control" for="description"></label>
                                     <textarea  class="form-control"  id="summernote"  name="Description"  v-html="course.Description" >
-                                        
+
                                     </textarea>
                                       <has-error :form='form' field='Description'></has-error>
                                 </div>
@@ -192,7 +192,7 @@
                             <td>{{course.Students}}</td>
                             <td>{{course.Rating}}</td>
                             <td>
-                                <i class="fa fa-edit btn btn-primary btn-sm" @click="Edit(course.id)" data-toggle="modal" data-target="#modal-edit"></i>&nbsp;<i class="fa fa-eye btn btn-success btn-sm" data-toggle="modal" data-target="#modal-xl" @click="GetCourse(course.id)"></i>&nbsp;<i class="fa fa-trash btn btn-danger btn-sm" @click="Delete(course.id)"></i>
+                                <i class="fa fa-edit btn btn-primary btn-sm" @click="Edit(course.id)"></i>&nbsp;<i class="fa fa-eye btn btn-success btn-sm" data-toggle="modal" data-target="#modal-xl" @click="GetCourse(course.id)"></i>&nbsp;<i class="fa fa-trash btn btn-danger btn-sm" @click="Delete(course.id)"></i>
                             </td>
                         </tr>
                     </tbody>
@@ -228,13 +228,10 @@ export default{
             })
         },
         Edit(id){
-             axios.get('/Course/View/4qnPjr6Ycg66gOfqyUXQagQSSkp3/'+id).then((response)=>{
-                // console.log(response.data.course)
-                this.course=response.data.course
-            })
+            window.open('/Courses/Edit/'+id,'_parent');
         },
         GetCourse(id){
-            //get the course by id 
+            //get the course by id
             axios.get('/Course/View/4qnPjr6Ycg66gOfqyUXQagQSSkp3/'+id).then((response)=>{
                 // console.log(response.data.course)
                 this.course=response.data.course

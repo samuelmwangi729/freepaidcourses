@@ -125,7 +125,7 @@
                                   <div class="product-name"><a href="#">{{course.CourseTitle}}</a></div>
                                   <b style="font-size:10px;font-weight:bold">Instructor :{{ course.Instructor }}</b> &nbsp;<b style="font-size:10px;font-weight:bold"> {{ course.Students }}  Students Enrolled</b>
                                   <div class="about">
-                                      
+
                                       <div class="rating">
                                            <span v-if="course.Rating==1" style="color:gold">
                                                 <i class="fa fa-star"></i>
@@ -160,15 +160,6 @@
                               </div>
                           </div>
                       </div>
-                      <nav>
-                          <ul class="pagination">
-                              <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                          </ul>
-                      </nav>
                   </div>
               </div>
           </div>
@@ -199,7 +190,7 @@ export default{
                 window.open('/Course/'+data.data.course.slug,'_parent');
                 //open a new window
             })
-            //post the id and save the details into a session variable 
+            //post the id and save the details into a session variable
         },
         loadMenus(){
             axios.get('/NtEeRAZWyEkd6QBNQNphgf7').then((response)=>{

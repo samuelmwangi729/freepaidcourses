@@ -21,8 +21,32 @@ Route::get('/ZM1LDQPNwhQ1wRDEpn5oe',[
 Route::get('/3fb3I6D1Nfyu7t3jSV3RB74',[
     'uses'=>'CoursesController@All'
 ]);
+Route::get('getBlogCategories',[
+    'uses'=>'BlogsController@Categories'
+]);
+Route::get('/getBlogs',[
+    'uses'=>'BlogsController@Blogs'
+]);
+Route::get('/GetSingleBlog/{slug}',[
+    'uses'=>'BlogsController@SingleBlog'
+]);
 Route::get('Course/{slug}',[
     'uses'=>'CoursesController@SingleCourse'
+]);
+Route::get('getCracksMenu',[
+    'uses'=>'CracksController@Menus'
+]);
+Route::get('getCracks',[
+    'uses'=>'CracksController@getAll'
+]);
+Route::get('/sppCat/{CatName}',[
+    'uses'=>'CracksController@Specific'
+]);
+Route::get('Crack/{slug}',[
+    'uses'=>'CracksController@SingleCrack'
+]);
+Route::get('/Courses/Edit/{id}',[
+    'uses'=>'CoursesController@edit'
 ]);
 Route::get('PY7Ux7bqLcOYSET',[
     'uses'=>'CoursesController@GetLatest'
@@ -50,7 +74,7 @@ Route::get('TechHacks',[
 'uses'=>'TechsController@TechHacks',
 'as'=>'techs'
 ]);
-Route::get('Cracks',[
+Route::get('/Cracked/Software',[
     'uses'=>'CracksController@Cracks',
     'as'=>'cracks'
 ]);
@@ -84,6 +108,19 @@ Route::get('/Menus',[
 Route::post('/Menus/Add',[
     'uses'=>'MenusController@store',
     'as'=>'menu.add'
+]);
+Route::get('/Blog/Menus',[
+    'uses'=>'BlogsController@Menus',
+    'as'=>'bmenus'
+]);
+Route::post('blog/Categories',[
+    'uses'=>'BlogsController@SaveCat'
+]);
+Route::get('/blog/Categories',[
+    'uses'=>'BlogsController@BlogCat'
+]);
+Route::post('delete/menu',[
+    'uses'=>'BlogsController@dcat'
 ]);
 Route::get('/Menus/Add/{id}',[
     'uses'=>'MenusController@destroy',
@@ -169,5 +206,61 @@ Route::group(['middleware' => ['auth']], function () {
     ]);
     Route::get('Course/View/4qnPjr6Ycg66gOfqyUXQagQSSkp3/{id}',[
         'uses'=>'CoursesController@show'
+    ]);
+    // Route::get('/create/blog',[
+    //     'uses'=>'BlogsController@create',
+    //     'as'=>'blog.create'
+    // ]);
+    Route::resource('blog','BlogsController');
+    Route::resource('cracks','CracksController');
+    Route::post('/CracksMenu',[
+        'uses'=>'CracksController@CracksMenu'
+    ]);
+    Route::get('/getCracksMenu',[
+        'uses'=>'CracksController@getCracksMenu'
+    ]);
+    Route::post('/Blog/Store',[
+        'uses'=>'BlogsController@store',
+        'as'=>'blog.store'
+    ]);
+    Route::get('/FetchBlogs',[
+        'uses'=>'BlogsController@Fetch',
+    ]);
+    Route::get('/Blog/Show/{id}',[
+        'uses'=>'BlogsController@show'
+    ]);
+    Route::get('/Delete/article/{id}',[
+        'uses'=>'BlogsController@destroy'
+    ]);
+    Route::post('/Delete/cmenu',[
+        'uses'=>'CracksController@cDelete'
+    ]);
+    Route::get('/cracks/All/get',[
+        'uses'=>'CracksController@All',
+        'as'=>'cracks.manage'
+    ]);
+    Route::get('/CracksAll',[
+        'uses'=>'CracksController@Api'
+    ]);
+    Route::get('/cracks/edit/{id}',[
+        'uses'=>'CracksController@edit',
+
+    ]);
+    Route::get('/Single/Crack/{id}',[
+        'uses'=>'CracksController@Single'
+    ]);
+    Route::get('/Delete/Crack/{id}',[
+        'uses'=>'CracksController@destroy'
+    ]);
+    Route::post('/Messages/Controller',[
+        'uses'=>'IndexController@store'
+    ]);
+    Route::get('/Messages',[
+        'uses'=>'IndexController@Messages',
+        'as'=>'messages'
+    ]);
+    Route::get('/Get/AllMessages',[
+        'uses'=>'IndexController@Api',
+
     ]);
 });

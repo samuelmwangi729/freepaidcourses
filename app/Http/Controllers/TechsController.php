@@ -48,7 +48,7 @@ class TechsController extends Controller
         $this->validate($request,$rules);
         $file=$request->file('FeaturedImage');
         $newName=time().$file->getClientOriginalName();
-        $path='courses/images';
+        $path='TechHack/images';
         $file->move($path,$newName);
         Tech::create([
             'Title'=>$request->Title,
@@ -110,14 +110,14 @@ class TechsController extends Controller
             //if there is an image uploaded
             $file=$request->file('FeaturedImage');
             if($file){
-                //delete the previous image 
+                //delete the previous image
                 @unlink($hack->FeaturedImage);
                 $newName=time().$file->getClientOriginalName();
                 $path='courses/images';
                 $file->move($path,$newName);
                 $hack->FeaturedImage='/'.$path.'/'.$newName;
             }
-            //then update everything about the post 
+            //then update everything about the post
             $hack->Title=$request->Title;
             $hack->IntroText=$request->IntroText;
             $hack->Category=$request->Category;

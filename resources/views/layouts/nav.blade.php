@@ -1,68 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="{{ config('app.name') }} is an online resource sharing site with over  100,000 courses In our Database. Get Access to What you Want to Study for free">
-  <meta name="keywords" content="Freelancer,udemy,paid,courses,free,hacking,courses"/>
-  <title>Free Online Courses - Access Anything On your Schedule - {{ config('app.name') }}</title>
-
-  <!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5eef022608ecd500128efbc0&product=sticky-share-buttons"></script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5eef022608ecd500128efbc0&cms=website' async='async'></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150395780-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-150395780-2');
-</script>
-<script data-ad-client="ca-pub-6177716716878978" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script data-ad-client="ca-pub-6177716716878978" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<style>
-#nav li a:hover{
-  background-color: red;
-  color:white;
-  text-decoration: none;
-}
-#nav li a{
-  color:black;
-  font-weight:bold;
-  font-size: 10px
-}
-span .fa{
-  color:#f1c059;
-}
-.card a{
-  text-decoration:none;
-  color:black
-}
-</style>
-</head>
-<body>
-  <div>
-    <nav class="navbar navbar-expand-md navbar-light navbar-fixed-top">
-      <a class="navbar-brand" href="/" style="font-size: 15px;color:red">{{ config('app.name') }}</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto" id="nav">
-          @foreach($menus as $menu)
-          <li class="nav-item">
-            <a class="nav-link p-2" href="{{ route('View',[$menu->Name]) }}">{{ $menu->Name }}</a>
-          </li>
-          @endforeach
-        </ul>
-      </div>
-    </nav>
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <div class="container-fluid"><a class="navbar-brand logo" href="/">FreePaidCourses</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"
+            id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ route('courses') }}">Courses</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{{ route('techs') }}">Tech Hacks</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{{ route('cracks') }}">Cracks</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{{ route('AboutUs') }}">About Us</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{{ route('contact') }}">Contact Us</a></li>
+            </ul><button class="btn btn-primary" type="button">Join Us&nbsp;&nbsp;<i class="fa fa-telegram"></i></button></div>
+    </div>
+</nav>
