@@ -8,7 +8,7 @@
                     <!-- Start: Intro -->
                     <div class="intro">
                         <h2>Tech Hacks</h2>
-                        <p>For the latest trends and new innovations in the IT sector</p><a class="btn btn-primary" role="button" href="#articles">Find Them Here<i class="fa fa-chevron-down" style="padding-left: 10px;"></i></a></div>
+                        <p>For the latest trends and new innovations in the IT sector</p><a class="btn btn-primary" role="button" href="javascript:void(0)">Find Them Here<i class="fa fa-chevron-down" style="padding-left: 10px;"></i></a></div>
                     <!-- End: Intro -->
                 </div>
                 <div class="col-sm-4">
@@ -20,46 +20,66 @@
         </div>
     </div>
     <!-- End: Highlight Phone -->
-    <!-- Start: Article List -->
-    <div class="article-list">
-        <div class="container-fluid" style="margin-top: 90px;">
-            <!-- Start: Intro -->
-            <div class="intro">
-                <h2 class="text-center" id="articles">Tech Articles</h2>
-            </div>
-            <!-- End: Intro -->
-            <!-- Start: Articles -->
+     <!-- Start: Articles -->
             <div class="row articles">
-                <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/desk.jpg?h=48517c5de1e0a97c47195a8c2a6fa5ea"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
-                <div
-                    class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/building.jpg?h=d468a07214c501ac1b41314b67eff488"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
-            <div
-                class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/loft.jpg?h=1e943b34582419a55451e4baa5bad9ac"></a>
-                <h3 class="name">Article Title</h3>
-                <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
-    </div>
-    <!-- End: Articles -->
-    </div>
-    </div>
-    <!-- End: Article List -->
-    </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                         <div class="col-sm-6 col-md-4 item mt-2" v-for="item in Hacks" :key="item.id">
+                            <a href="#"><img class="img-fluid" :src="item.FeaturedImage" style="width:350px;height:300px !important"></a>
+                            <h3 class="text-center name">{{item.Title}}</h3>
+                            <p class="description text-center" style="color:Red">
+                                {{ item.IntroText }}
+                            </p>
+                            <div class="text-center"><button class="btn btn-outline-success" @click="Open(item.Slug)">More Info.<i class="fa fa-chevron-right"></i></button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    Categories
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="category in categories" :key="category.id" @click="GetOne(category.Category)">{{ category.Category }}</li>
+                    </ul>
+                </div>
+            </div>
+        <!-- End: Articles -->
+        </div>
 </template>
 <script>
-export default{
-    data(){
-        return{
-            Hacks:[]
+    export default{
+        data(){
+            return{
+                categories:[],
+                Hacks:[]
+            }
+        },
+        methods:{
+            Open(slug){
+                window.open('/TechHack/'+slug,'_parent');
+            },
+            loadCategories(){
+            axios.get('/getTechCategories').then((response)=>{
+                this.categories=response.data
+                console.log(response.data)
+            })
+            },
+            loadHacks(){
+                axios.get('/getAllHacks').then((response)=>{
+                    this.Hacks=response.data
+                })
+            },
+            GetOne(category){
+                    axios.get('/getOneHack/'+category).then((response)=>{
+                        this.Hacks=response.data
+                        if(response.data.length==0){
+                             swal("Ooh No!", "No Posts Available Under "+ category+" Category!!!!Kindly Check Again Later", "warning");
+                             this.loadHacks()
+                        }
+                    })
+                },
+        },
+        created(){
+            this.loadHacks()
+            this.loadCategories()
         }
-    },
-    methods:{
-
-    },
-    created(){
-        console.log('Tech Hacks Loaded')
     }
-}
 </script>

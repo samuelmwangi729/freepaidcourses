@@ -10,7 +10,7 @@
                     <h1>Contact Us</h1>
                     <hr>
                     <p>You can contact Via the form below or get us in our social platforms.Feel free to request a course and we will be glad to upload it for you.</p>
-                    <div style="text-align:center"><button class="btn btn-light btn-lg" type="button">Back To Home</button></div>
+                    <div style="text-align:center"><button class="btn btn-light btn-lg" type="button" @click="Open()">Back To Home</button></div>
                 </div>
             </div>
             <!-- End: dh-row-text-image-right-responsive -->
@@ -54,6 +54,9 @@
             }
         },
         methods:{
+            Open(){
+                window.open('/','_parent')
+            },
             SendMessage:function(){
                 if(this.Name==''){
                     this.errorName="The Name Field is Required";

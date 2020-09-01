@@ -74,7 +74,7 @@
                                       <label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 13px;" @click="getCourse(item.id)">{{item.Name}}</label>
                                     </div>
                               </div>
-                              <div class="filter-item">
+                              <!-- <div class="filter-item">
                                   <h3 style="color: red;">Top Rated</h3>
                                   <div class="form-check" v-for="item in topRated" :key="item.id">
                                       <input class="form-check-input" type="checkbox" id="formCheck-5" @click="viewCourse(item.id)">
@@ -87,10 +87,10 @@
                                         <input class="form-check-input" type="checkbox" id="formCheck-5" @click="viewCourse(item.id)">
                                         <label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 11px;" @click="viewCourse(item.id)">{{item.CourseTitle}}</label>
                                     </div>
-                              </div>
+                              </div> -->
                           </div>
                       </div>
-                      <div class="d-md-none"><a class="btn btn-link d-md-none filter-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="filters" href="#filters" role="button">Filters<i class="icon-arrow-down filter-caret"></i></a>
+                      <div class="d-md-none"><a class="btn btn-link d-md-none filter-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="filters" href="#filters" role="button">Filters<i class="fa fa-bars filter-caret"></i></a>
                           <div class="collapse"
                               id="filters">
                               <div class="filters">
@@ -100,7 +100,7 @@
                                       <label class="form-check-label" for="formCheck-1" style="font-weight: bold;font-size: 13px;">{{item.Name}}</label>
                                     </div>
                                   </div>
-                                    <div class="filter-item">
+                                    <!-- <div class="filter-item">
                                         <h3 style="color: red;">Top Rated</h3>
                                         <div class="form-check" v-for="item in topRated" :key="item.id" @click="viewCourse(item.id)">
                                         <label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 11px;">{{item.CourseTitle}}</label>
@@ -111,7 +111,7 @@
                                    <div class="form-check" v-for="item in highly" :key="item.id" @click="viewCourse(item.id)">
                                         <label class="form-check-label" for="formCheck-5" style="font-weight: bold;font-size: 11px;" @click="viewCourse(item.id)">{{item.CourseTitle}}</label>
                                     </div>
-                              </div>
+                              </div> -->
                           </div>
                       </div>
                   </div>

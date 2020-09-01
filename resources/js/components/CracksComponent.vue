@@ -98,6 +98,7 @@ export default{
                 this.count=this.cracks.length
                 if(this.cracks.length==0){
                     swal("Ooh No!", "No cracks Available!!!!Kindly Check Again Later", "warning");
+                     this.loadCracks()
                 }
                 // console.log(response.data)
             })

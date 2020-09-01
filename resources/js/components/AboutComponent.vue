@@ -15,7 +15,7 @@
         </div>
         <!-- End: Bold BS4 Jumbotron with Particles js -->
         <section class="clean-block about-us">
-            <div class="container-fluid">
+            <!-- <div class="container-fluid">
                 <div class="block-heading">
                     <h2 class="text-info">About Us</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
@@ -49,24 +49,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
-<!-- Start: Animated Type Heading -->				
-                <div class="caption v-middle text-center">
+            </div> -->
+<!-- Start: Animated Type Heading -->
+                <div class="container-fluidcaption v-middle text-center">
 					<h1 class="cd-headline clip">
 			            <span class="blc">We are| </span>
 			            <span class="cd-words-wrapper">
-			              <b class="is-visible">Developers.</b>
+			              <b class="is-visible">Devs.</b>
 			              <b>Hackers.</b>
-			              <b>Software Engineers.</b>
 			              <b>Providers.</b>
-			              <b>Here For You.</b>
 			            </span>
 	          		</h1>
 				</div>
             <!-- End: Animated Type Heading -->
             <!-- Start: --mp--Animated Service Box -->
             <section style="filter: brightness(134%) contrast(90%) grayscale(0%);">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
                             <div class="serviceBox">
@@ -95,7 +93,7 @@
             <!-- End: --mp--Animated Service Box -->
             <!-- Start: web-technologies -->
             <div class="row cat-row">
-                <div class="col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1 spcl-abt"><i class="fa fa-html5"></i></div>
+                <div class="col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1 spcl-abt"><i class="fas fa-html5"></i></div>
                 <div class="col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1 spcl-abt"><i class="fa fa-css3"></i></div>
                 <div class="col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1 spcl-abt"><i class="icon ion-social-javascript"></i></div>
                 <div class="col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1 spcl-abt"><i class="fab fa-java"></i></div>
@@ -110,7 +108,7 @@
             </div>
             <!-- End: web-technologies -->
             <!-- Start: Bold BS4 Jumbotron with Particles js -->
-            
+
             <!-- End: Bold BS4 Jumbotron with Particles js -->
         </section>
           <!-- Start: Bold BS4 Jumbotron with Particles js -->
@@ -118,11 +116,11 @@
                 <div id="particles-js" class="container-fluid">
                     <canvas class="particles-js-canvas-el" width="1409" height="319" style="width: 100%; height: 100%;"></canvas>
                 </div>
-                <div class="container center-vertically-holder" style="margin-top:-20px;">
+                <div class="container-fluid center-vertically-holder" style="margin-top:-20px;">
                     <div class="row text-center justify-content-end center-vertically">
                         <div class="col-md-8 offset-sm-0 offset-md-2 text-center" style="">
                             <h1>You Have a job for Us?</h1>
-                            <h1><button class="btn btn-primary btn-lg text-center" type="button">Contact Us</button></h1>
+                            <h1><button class="btn btn-primary btn-lg text-center" type="button" @click="Open()">Contact Us</button></h1>
                         </div>
                     </div>
                 </div>
@@ -130,3 +128,17 @@
             <!-- End: Bold BS4 Jumbotron with Particles js -->
 </div>
 </template>
+<script>
+    export default{
+        data(){
+            return{
+                data:''
+            }
+        },
+        methods:{
+            Open:function(){
+                window.open('/Contact','_parent');
+            }
+        }
+    }
+</script>

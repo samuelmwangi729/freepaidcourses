@@ -5,7 +5,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ courses }}</h3>
 
                         <p>Courses</p>
                     </div>
@@ -20,7 +20,7 @@
                  <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{hacks}}</h3>
 
                         <p>Tech Hacks</p>
                     </div>
@@ -35,7 +35,7 @@
                 <!-- small box -->
                 <div class="small-box bg-dark">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{cracks}}</h3>
 
                         <p>S/W Cracks</p>
                     </div>
@@ -50,7 +50,7 @@
                 <!-- small box -->
                 <div class="small-box bg-primary">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ blogs }}</h3>
 
                         <p>Blogs</p>
                     </div>
@@ -65,7 +65,7 @@
             <!-- small box -->
             <div class="small-box bg-primary">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{CatCrack}}</h3>
 
                         <p>Cracks Categories</p>
                     </div>
@@ -80,7 +80,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{CatTech}}</h3>
 
                         <p>Tech Categories</p>
                     </div>
@@ -95,7 +95,7 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{Messages}}</h3>
 
                         <p>Courses Requests</p>
                     </div>
@@ -110,7 +110,7 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{Messages}}</h3>
 
                         <p>Messages</p>
                     </div>
@@ -121,9 +121,6 @@
                 </div>
                 <!--End Small-box-->
             </div>
-          <div class="col-6 col-lg-3">
-                <canvas id="myChart" width="400" height="400"></canvas>
-          </div>
         </div>
     </div>
 </template>
@@ -136,18 +133,60 @@
 export default{
     data(){
         return{
-
+            courses:'',
+            hacks:'',
+            cracks:'',
+            blogs:'',
+            CatCrack:'',
+            CatTech:'',
+            Messages:'',
         }
     },
     methods:{
-        drawChart(){
-             swal("Good job!", "You clicked the button!", "success");
+        getCourses(){
+            axios.get('/CountCourses').then((response)=>{
+                this.courses=response.data
+            })
         },
-        mounted(){
-            this.alert()
-            this.drawChart()
-           
-        }
+        getHacks(){
+            axios.get('/CountTech').then((response)=>{
+                this.hacks=response.data
+            })
+        },
+        getCracks(){
+            axios.get('/CountCrack').then((response)=>{
+                this.cracks=response.data
+            })
+        },
+        getBlogs(){
+            axios.get('/CountBlog').then((response)=>{
+                this.blogs=response.data
+            })
+        },
+        getCatCracks(){
+            axios.get('/CrackMenuCount').then((response)=>{
+                this.CatCrack=response.data
+            })
+        },
+        getCatTechs(){
+            axios.get('/TechMenuCount').then((response)=>{
+                this.CatTech=response.data
+                this.Messages=response.data
+            })},
+        getMessage(){
+            axios.get('/MessagesCount').then((response)=>{
+                this.Messages=response.data
+            })
+        },
+    },
+    created(){
+        this.getCourses()
+        this.getHacks()
+        this.getCracks()
+        this.getBlogs()
+        this.getCatCracks()
+        this.getCatTechs()
+        this.getCatMessages()
     }
 }
 </script>

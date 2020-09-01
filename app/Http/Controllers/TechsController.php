@@ -146,6 +146,14 @@ class TechsController extends Controller
             return $data;
         }
     }
+    public function getOneHack($category){
+        $hacks=Tech::where('Category','=',$category)->get();
+        return $hacks;
+    }
+    protected function SingleHack($slug){
+        $single=Tech::where('Slug','=',$slug)->get()->first();
+        return view('TechHacks.Single')->with('single',$single);
+    }
     public function TechHacks(){
         return view('TechHacks');
     }
@@ -157,6 +165,14 @@ class TechsController extends Controller
             $message=['Status'=>'Success'];
             return $message;
         }
+    }
+    protected function THacksCategories(){
+        $categories=TechCategory::all();
+        return $categories;
+    }
+    protected function getAllHacks(){
+        $hacks=Tech::all();
+        return $hacks;
     }
     protected function getCategories(){
         $categories=TechCategory::all();

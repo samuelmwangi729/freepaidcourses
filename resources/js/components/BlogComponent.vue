@@ -8,7 +8,7 @@
                     <!-- Start: Intro -->
                     <div class="intro">
                         <h2>Our Blog</h2>
-                        <p>Find&nbsp; latest articles in the IT sector and any related field here</p><a class="btn btn-primary" role="button" href="#articles">Read more<i class="fa fa-chevron-down" style="padding-left: 10px;"></i></a></div>
+                        <p>Find&nbsp; latest articles in the IT sector and any related field here</p><a class="btn btn-primary" role="button" href="javascript::void(0)">Read more<i class="fa fa-chevron-down" style="padding-left: 10px;"></i></a></div>
                     <!-- End: Intro -->
                 </div>
                 <div class="col-sm-4">
@@ -44,7 +44,7 @@
                 <div class="col-sm-3">
                     Categories
                     <ul class="list-group">
-                        <li class="list-group-item" v-for="category in categories" :key="category.id">{{ category.Name }}</li>
+                        <li class="list-group-item" v-for="category in categories" :key="category.id" @click="GetOne(category.Name)">{{ category.Name }}</li>
                     </ul>
                 </div>
             </div>
@@ -75,7 +75,12 @@
                 axios.get('/getBlogs').then((response)=>{
                     this.blogs=response.data
                 })
-            }
+            },
+            GetOne(category){
+                    axios.get('/getOne/'+category).then((response)=>{
+                        this.blogs=response.data
+                    })
+                },
         },
         created(){
             this.loadBlogs()

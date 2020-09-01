@@ -15,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 Route::post('vCj1lBA/5D7xhyuEFuIAwabFNqgR',[
     'uses'=>'CoursesController@getCourse'
 ]);
+Route::get('welcome/blogs',[
+    'uses'=>'IndexController@WelcomeBlog'
+]);
+Route::get('/welcome/hacks',[
+    'uses'=>'IndexController@WelcomeHack'
+]);
+Route::get('getCracksMenu',[
+    'uses'=>'CracksController@Menus'
+]);
+Route::get('/getCracksMenu',[
+    'uses'=>'CracksController@getCracksMenu'
+]);
 Route::get('/ZM1LDQPNwhQ1wRDEpn5oe',[
     'uses'=>'CoursesController@TopRated'
 ]);
@@ -30,11 +42,23 @@ Route::get('/getBlogs',[
 Route::get('/GetSingleBlog/{slug}',[
     'uses'=>'BlogsController@SingleBlog'
 ]);
+Route::get('/getOne/{category}',[
+    'uses'=>'BlogsController@getSingle'
+]);
+Route::get('/getTechCategories',[
+    'uses'=>'TechsController@THacksCategories'
+]);
+Route::get('/getAllHacks',[
+    'uses'=>'TechsController@getAllHacks'
+]);
+Route::get('/TechHack/{slug}',[
+    'uses'=>'TechsController@SingleHack'
+]);
+Route::get('getOneHack/{category}',[
+    'uses'=>'TechsController@getOneHack'
+]);
 Route::get('Course/{slug}',[
     'uses'=>'CoursesController@SingleCourse'
-]);
-Route::get('getCracksMenu',[
-    'uses'=>'CracksController@Menus'
 ]);
 Route::get('getCracks',[
     'uses'=>'CracksController@getAll'
@@ -178,6 +202,27 @@ Route::group(['middleware' => ['auth']], function () {
         'uses'=>'CoursesController@destroy',
         'as'=>'course.delete'
     ]);
+    Route::get('/CountCourses',[
+        'uses'=>'IndexController@CourseCount'
+    ]);
+    Route::get('/CountTech',[
+        'uses'=>'IndexController@TechCount'
+    ]);
+    Route::get('/CountCrack',[
+        'uses'=>'IndexController@CracksCount'
+    ]);
+    Route::get('/CountBlog',[
+        'uses'=>'IndexController@BlogCount'
+    ]);
+    Route::get('/CrackMenuCount',[
+        'uses'=>'IndexController@CracksMenuCount'
+    ]);
+    Route::get('/MessagesCount',[
+        'uses'=>'IndexController@MessageCount'
+    ]);
+    Route::get('/TechMenuCount',[
+        'uses'=>'IndexController@TechCount'
+    ]);
     Route::resource('Techs','TechsController');
     Route::get('/Course/EDgXSAqAP7BgLHT/0W0ujLdMM9U3yLrrpI9urhugjfIag/{id}',[
         'uses'=>'CoursesController@edit',
@@ -215,9 +260,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('cracks','CracksController');
     Route::post('/CracksMenu',[
         'uses'=>'CracksController@CracksMenu'
-    ]);
-    Route::get('/getCracksMenu',[
-        'uses'=>'CracksController@getCracksMenu'
     ]);
     Route::post('/Blog/Store',[
         'uses'=>'BlogsController@store',

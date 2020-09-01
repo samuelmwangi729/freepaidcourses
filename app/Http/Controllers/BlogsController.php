@@ -204,4 +204,8 @@ class BlogsController extends Controller
         $blog=Blog::where('Slug','=',$slug)->get()->first();
         return view('Blogs.SingleView')->with('blog',$blog);
     }
+    protected function getSingle($category){
+        $blogs=Blog::where('Category','=',$category)->get();
+        return $blogs;
+    }
 }

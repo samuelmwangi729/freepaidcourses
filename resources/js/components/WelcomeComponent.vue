@@ -8,22 +8,22 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
                                 <div class="jumbotron hero-nature carousel-hero">
-                                    <h1 class="hero-title">Free Paid Courses.<br></h1>
+                                    <h1 class="hero-title" style="color:black">Free Paid Courses.<br></h1>
                                     <p class="lead hero-subtitle" style="background-color: rgb(3,11,82);opacity: 0.36;"><br>We Help the One who cant afford Paid Courses. We Post Courses Here for free together with their coupons so that one can enroll in to the course easily. All you do is to click the link and you will get redirected<br></p>
-                                    <p><button class="btn btn-primary text-center border rounded hero-button" type="button" style="background-color: rgb(3,11,82);">Try Out<i class="fa fa-chevron-circle-right" style="margin-right: 5px;padding-left: 10px;"></i></button></p>
+                                    <p></p>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="jumbotron hero-photography carousel-hero">
-                                    <h1 class="hero-title">Learn The Art&nbsp;</h1>
-                                    <p class="hero-subtitle">With the courses, you get to learn the technical skills to be applied in the real world. An example is Photography,&nbsp;</p>
+                                    <h1 class="hero-title" style="color:black">Learn The Art&nbsp;</h1>
+                                    <p class="hero-subtitle" style="background-color:black;font-size:20px">With the courses, you get to learn the technical skills to be applied in the real world. An example is Photography,&nbsp;</p>
                                     <p></p>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="jumbotron hero-technology carousel-hero">
-                                    <h1 class="hero-title">Readily Accessible</h1>
-                                    <p class="hero-subtitle">The courses will be readily accessible from any device you are viewing in from.</p>
+                                    <h1 class="hero-title" style="color:black">Readily Accessible</h1>
+                                    <p class="hero-subtitle" style="background-color: black;font-size:20px">The courses will be readily accessible from any device you are viewing in from.</p>
                                     <p></p>
                                 </div>
                             </div>
@@ -61,101 +61,25 @@
                          clock to make sure that you got what you need.</p>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-md-5 feature-box">
+                    <div class="col-md-5 feature-box card" style="margin-right:20px">
                         <h4 style="color:purple">Top Rated Content</h4>
                         <p style="color: rgb(13,13,13);">We offer the Best and top rated courses in e-learning platforms.</p>
                     </div>
-                    <div class="col-md-5 feature-box">
+                    <div class="col-md-5 feature-box card">
                           <h4 style="color:purple">Free of Charge</h4>
                         <p style="color: rgb(13,13,13);">We provide the courses for free. Beware of anyone who ask you for money to give you any course coupon</p>
                     </div>
-                    <div class="col-md-5 feature-box">
+                    <div class="col-md-5 feature-box card" style="margin-right:20px">
                          <h4 style="color:purple">Responsive Design</h4>
                         <p style="color: rgb(13,13,13);">Our Site Is mainly build with a responsivedesign to make sure that the site will always offer best experienceto users using any device to browse through our site</p>
                     </div>
-                    <div class="col-md-5 feature-box">
+                    <div class="col-md-5 feature-box card">
                          <h4 style="color:purple">All Browser Compatibility</h4>
                         <p style="color: rgb(13,13,13);">We use the latest technology to make sure that our site is compatible with all the browsers. If Any Issue on Browser Compatibility,Contact Us</p>
                     </div>
                 </div>
             </div>
             <!-- Start: About Us -->
-            <section class="clean-block about-us">
-                <div class="container">
-                    <div class="block-heading">
-                        <h2 class="text-info" style="font-weight: bold;">Top Rated Courses</h2>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-sm-6 col-lg-4" v-for="course in topRated" :key="course.id">
-                            <!-- {{ course }} -->
-                            <div class="card clean-card text-center">
-                                <img class="card-img-top w-100 d-block"  :src="course.CourseBanner">
-                                <div class="card-body info">
-                                    <h4 class="card-title">Category : {{course.CourseTitle}}</h4>
-                                    <p class="card-text" style="color:black">{{course.Category}}</p>
-                                    <button class="btn btn-primary" type="button" @click="viewCourse(course.id)">View Course
-                                        <i class="fa fa-chevron-right" style="margin-left: 10px;"></i>
-                                        </button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="block-heading">
-                        <h2 class="text-info">Our Blog</h2>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image6.jpg?h=26f762ae21fd9cce95e86763ac6154ca">
-                                <div class="card-body info">
-                                    <p class="card-text" style="color: rgb(13,13,13);">Apple wins Big from ...</p><button class="btn btn-primary" type="button">Read More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/tech/image4.jpg?h=0adc0de9a17a7caea6b8641f5d6ae02c">
-                                <div class="card-body info">
-                                    <p class="card-text" style="color: rgb(13,13,13);">Apart fromFree Courses...</p><button class="btn btn-primary" type="button">Read More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg?h=4c77b34bb68eaede08fdd5dfec8752b0">
-                                <div class="card-body info">
-                                    <p class="card-text" style="color: rgb(13,13,13);">The rollOver ...</p><button class="btn btn-primary" type="button">Read More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <section></section>
-                <div class="row" style="margin-top: 30px;margin-bottom: -60px;">
-                    <div class="col">
-                        <h1 class="display-4 text-monospace text-uppercase text-center d-block float-none">Latest courses</h1>
-                    </div>
-                </div>
-                <div></div>
-            </section>
-            <!-- End: About Us -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/tech/image4.jpg?h=0adc0de9a17a7caea6b8641f5d6ae02c">
-                            <div class="card-body info">
-                                <p class="card-text" style="color: rgb(13,13,13);">Apart fromFree Courses...</p><button class="btn btn-primary" type="button">Read More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/tech/image4.jpg?h=0adc0de9a17a7caea6b8641f5d6ae02c">
-                            <div class="card-body info">
-                                <p class="card-text" style="color: rgb(13,13,13);">Apart fromFree Courses...</p><button class="btn btn-primary" type="button">Read More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/tech/image4.jpg?h=0adc0de9a17a7caea6b8641f5d6ae02c">
-                            <div class="card-body info">
-                                <p class="card-text" style="color: rgb(13,13,13);">Apart fromFree Courses...</p><button class="btn btn-primary" type="button">Read More<i class="fa fa-chevron-right" style="margin-left: 10px;"></i></button></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- Start: Testimonial Slider 9 --><!-- Paradise Slider -->
 	<div id="testimonial_095" class="carousel slide testimonial_095_indicators testimonial_095_control_button thumb_scroll_x swipe_x ps_easeOutSine" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
 
@@ -179,9 +103,9 @@
 			<div class="carousel-item active">
 				<!-- Text Layer -->
 				<div class="testimonial_095_slide">
-					<a href="#"><span class="fa fa-twitter"></span></a>
+					<a href="#"><span class="fa fa-user"></span></a>
 					<p>Best Provider Ever <a href="#">@freepaidcourses</a> is surely here to help. I will surely support then no matter what</p>
-					<h5><a href="#">Benedict Tuiya</a></h5>
+					<h5><a href="#">Benson</a></h5>
 				</div> <!-- /Text Layer -->
 			</div> <!-- /item -->
 			<!-- End of First Slide -->
@@ -190,9 +114,9 @@
 			<div class="carousel-item">
 				<!-- Text Layer -->
 				<div class="testimonial_095_slide">
-					<a href="#"><span class="fa fa-twitter"></span></a>
-					<p>Lorem ipsum dolor sit amet <a href="#">@consectetuer</a> adipiscing elit am nibh unc varius facilisis eros ed erat in in velit quis arcu ornare laoreet urabitur.</p>
-					<h5><a href="#">name of consumer</a></h5>
+					<a href="#"><span class="fa fa-user"></span></a>
+					<p>With the change in Tech trends, I find  <a href="#">@freepaidcourses</a> best provider of online resources for free. I highly Recommend Them.</p>
+					<h5><a href="#">Taylor Lawson</a></h5>
 				</div> <!-- /Text Layer -->
 			</div> <!-- /item -->
 			<!-- End of Second Slide -->
@@ -201,9 +125,9 @@
 			<div class="carousel-item">
 				<!-- Text Layer -->
 				<div class="testimonial_095_slide">
-					<a href="#"><span class="fa fa-twitter"></span></a>
-					<p>Lorem ipsum dolor sit amet <a href="#">@consectetuer</a> adipiscing elit am nibh unc varius facilisis eros ed erat in in velit quis arcu ornare laoreet urabitur.</p>
-					<h5><a href="#">name of consumer</a></h5>
+					<a href="#"><span class="fa fa-user"></span></a>
+					<p>To Us, who are strugling to study for free, i personally find <a href="#">@freepaidcourses</a> as the only platform ready to help us by providing the resources for free without any charges. We will surely  support this platform</p>
+					<h5><a href="#">Kelvin Brown</a></h5>
 				</div> <!-- /Text Layer -->
 			</div> <!-- /item -->
 			<!-- End of Third Slide -->
@@ -231,10 +155,23 @@ export default{
     data(){
         return{
             course:[],
-            topRated:[]
+            topRated:[],
+            blogs:[],
+            hacks:[]
         }
     },
     methods:{
+        getBlogs(){
+            axios.get('http://127.0.0.1:8000/welcome/blogs').then((response)=>{
+                this.blogs=response.data
+                console.log(response.data)
+            })
+        },
+        getBlogs(){
+            axios.get('/welcome/hacks').then((response)=>{
+                this.hacks=response.data
+            })
+        },
         loadTop(){
             axios.get('/Top/Rated').then((response)=>{
                 this.course=response.data.course[0]
@@ -261,6 +198,7 @@ export default{
     created(){
       this.loadTop()
       this.TopRated()
+      this.getBlogs()
     }
 }
 </script>

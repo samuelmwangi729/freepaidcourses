@@ -13,7 +13,7 @@ class AdminSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name'=>'freepaidcouse',
+            'name'=>'Admin for Admin',
             'email'=>'mail@freepaidcourse.info',
             'password'=>'$2y$10$34anhLgnEs/YBvPKl8JD8.I/xw0uN6GcVB4nf2qYhaFW7gIXPwT0C',
         ]);
