@@ -136,32 +136,21 @@ class CoursesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $course=Course::findOrFail($id);
         // dd($request->all());
-        $bannerImage=$request->CourseBanner;
-        //Assign the variables
-        $title=$request->CourseTitle;
-        $slug=str_slug($title);
-        $instructor=$request->Instructor;
-        $category=$request->Category;
-        $rating=$request->Rating;
-        $students=$request->Students;
-        $link=$request->CourseLink;
-        $req=$request->Prerequisites;
-        $desc=$request->Description;
-        $course=Course::find($id)->first();
-        $course->CourseTitle=$title;
-        $course->slug=$slug;
-        $course->Instructor=$instructor;
-        $course->Category=$category;
-        $course->Rating=$rating;
-        $course->Students=$students;
-        $course->CourseLink=$link;
-        $course->Prerequisites=$req;
-        $course->Description=$desc;
-        $course->CourseBanner=$bannerImage;
+        $course->CourseTitle=$request->CourseTitle;
+        $course->slug=str_slug($request->CourseTitle);
+        $course->Instructor=$request->Instructor;
+        $course->Category=$request->Category;
+        $course->Rating=$request->Rating;
+        $course->Students=$request->Students;
+        $course->CourseLink=$request->CourseLink;
+        $course->Prerequisites=$request->Prerequisites;
+        $course->Description=$request->Description;
+        $course->CourseBanner=$request->CourseBanner;
         $course->save();
         Session::flash('success','the course has been successfully Updated');
-        return redirect('/home');
+        return back();
     }
 
     /**

@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css?h=5000420eb2b2037ddbbdb385b3c90c87') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+        <script data-ad-client="ca-pub-6177716716878978" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- Scripts -->
 
 

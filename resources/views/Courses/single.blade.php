@@ -12,14 +12,16 @@
         @include('layouts.nav')
         <div class="container-fluid" style="margin-top:70px">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6 offset-sm-3">
                     <h2 class="text-center">{{ $course->CourseTitle }}</h2>
                     <img src="{{$course->CourseBanner}}" width="100%">
-                    {!! $course->Description !!}
-                </div>
-                <div class="col-sm-4">
+                   <span>
                     {!! $course->Prerequisites !!}
-                    <br><h2><span>Category: {{ $course->Category }}</span></h2>
+                    <span>
+                        {!! $course->Description !!}
+                      </span>
+                   </span>
+                   <br><h2><span>Category: {{ $course->Category }}</span></h2>
                     <br><span>Instructor : {{ $course->Instructor }}</span>
                     <br><span>Students Enrolled:  {{ $course->Students }} Students {{  $course->Rating }}</span>
                     <br><span>Rating
@@ -46,9 +48,13 @@
                         @endif
                         {{ $course->Rating}} (Stars) Rating
                     </span>
+
                     <br><span>
                         <button class="btn btn-danger mt-5" onclick="window.open('{{ $course->CourseLink }}','_parent')">Check Course</button>
                     </span>
+                </div>
+                <div class="col-sm-6">
+
                 </div>
             </div>
 

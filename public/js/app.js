@@ -45752,100 +45752,100 @@ var render = function() {
               attrs: { src: _vm.course.CourseBanner, width: "100%" }
             }),
             _vm._v(" "),
-            _c(
-              "span",
-              { domProps: { innerHTML: _vm._s(_vm.course.Description) } },
-              [_vm._v(" " + _vm._s(_vm.course.Description))]
-            )
+            _c("span", {
+              staticStyle: { color: "black !important" },
+              domProps: { innerHTML: _vm._s(_vm.course.Prerequisites) }
+            }),
+            _vm._v(
+              "\n                Instructor:   " +
+                _vm._s(_vm.course.Instructor) +
+                " \n                Students:   " +
+                _vm._s(_vm.course.Students) +
+                "\n                 "
+            ),
+            _vm.course.Rating == 1
+              ? _c("span", { staticStyle: { color: "gold" } }, [
+                  _c("i", { staticClass: "fa fa-star" })
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.course.Rating == 2
+              ? _c("span", { staticStyle: { color: "gold" } }, [
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" })
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.course.Rating == 3
+              ? _c("span", { staticStyle: { color: "gold" } }, [
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" })
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.course.Rating == 4
+              ? _c("span", { staticStyle: { color: "gold" } }, [
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" })
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.course.Rating == 5
+              ? _c("span", { staticStyle: { color: "gold" } }, [
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-star" })
+                ])
+              : _vm._e(),
+            _vm._v(
+              "\n                  (" +
+                _vm._s(_vm.course.Rating) +
+                " Star) Rating\n                  "
+            ),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-6 offset-sm-4" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger",
+                    on: {
+                      click: function($event) {
+                        return _vm.viewCourse(_vm.course.CourseLink)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                              Preview Course\n                          "
+                    )
+                  ]
+                )
+              ])
+            ])
           ]
         ),
         _vm._v(" "),
         _c("div", { staticClass: "col-sm-5" }, [
-          _c("span", {
-            staticStyle: { color: "black !important" },
-            domProps: { innerHTML: _vm._s(_vm.course.Prerequisites) }
-          }),
-          _vm._v(
-            "\n                Instructor:   " +
-              _vm._s(_vm.course.Instructor) +
-              " \n                Students:   " +
-              _vm._s(_vm.course.Students) +
-              "\n                 "
-          ),
-          _vm.course.Rating == 1
-            ? _c("span", { staticStyle: { color: "gold" } }, [
-                _c("i", { staticClass: "fa fa-star" })
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.course.Rating == 2
-            ? _c("span", { staticStyle: { color: "gold" } }, [
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" })
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.course.Rating == 3
-            ? _c("span", { staticStyle: { color: "gold" } }, [
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" })
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.course.Rating == 4
-            ? _c("span", { staticStyle: { color: "gold" } }, [
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" })
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.course.Rating == 5
-            ? _c("span", { staticStyle: { color: "gold" } }, [
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa fa-star" })
-              ])
-            : _vm._e(),
-          _vm._v(
-            "\n                  (" +
-              _vm._s(_vm.course.Rating) +
-              " Star) Rating\n                  "
-          ),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-6 offset-sm-4" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-danger",
-                  on: {
-                    click: function($event) {
-                      return _vm.viewCourse(_vm.course.CourseLink)
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\n                              Preview Course\n                          "
-                  )
-                ]
-              )
-            ])
-          ])
+          _c(
+            "span",
+            { domProps: { innerHTML: _vm._s(_vm.course.Description) } },
+            [_vm._v(" " + _vm._s(_vm.course.Description))]
+          )
         ])
       ])
     ]
